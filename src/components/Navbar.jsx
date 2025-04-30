@@ -25,10 +25,10 @@ const Navbar = () => {
   }, [])
 
   const navLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'Plans', path: '/plans' },
-    { name: 'Solutions', path: '/solutions' },
-    { name: 'Contact', path: '/contact' },
+    { name: 'Início', path: '/' },
+    { name: 'Planos', path: '/plans' },
+    { name: 'Soluções', path: '/solutions' },
+    { name: 'Contato', path: '/contact' },
   ]
 
   return (
@@ -42,7 +42,7 @@ const Navbar = () => {
           <Logo />
         </Link>
 
-        {/* Desktop Navigation */}
+        {/* Navegação Desktop */}
         <nav className="hidden md:flex items-center space-x-8">
           {navLinks.map((link) => (
             <NavLink
@@ -57,21 +57,21 @@ const Navbar = () => {
             </NavLink>
           ))}
           <Link to="/contact" className="btn btn-primary">
-            Get Started
+            Comece Agora
           </Link>
         </nav>
 
-        {/* Mobile Navigation */}
+        {/* Botão Mobile */}
         <button
           className="p-2 md:hidden text-primary-500"
           onClick={toggleMenu}
-          aria-label="Toggle menu"
+          aria-label="Alternar menu"
         >
           {isMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Menu Mobile */}
       {isMenuOpen && (
         <div className="fixed inset-0 z-40 flex flex-col w-full h-screen bg-white md:hidden animate-fade-in pt-20">
           <div className="container flex flex-col space-y-4 mt-4">
@@ -95,7 +95,7 @@ const Navbar = () => {
               className="btn btn-primary w-full mt-6 text-center"
               onClick={() => setIsMenuOpen(false)}
             >
-              Get Started
+              Comece Agora
             </Link>
           </div>
         </div>

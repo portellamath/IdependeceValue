@@ -4,7 +4,7 @@ import { FiCheck } from 'react-icons/fi'
 const PlanCard = ({ 
   title, 
   price, 
-  period = 'month', 
+  period = 'mês', 
   description, 
   features, 
   isPopular = false,
@@ -22,7 +22,7 @@ const PlanCard = ({
     >
       {isPopular && (
         <div className="absolute top-0 right-0 bg-secondary-500 text-white py-1 px-3 text-xs font-medium transform translate-x-2 -translate-y-2 rounded">
-          Popular
+          Mais Popular
         </div>
       )}
 
@@ -31,9 +31,9 @@ const PlanCard = ({
         <p className="text-gray-600 mb-6">{description}</p>
 
         <div className="flex items-end">
-          <span className="text-4xl font-bold text-primary-500">${price}</span>
+          <span className="text-4xl font-bold text-primary-500">R${price}</span>
           {period && (
-            <span className="text-gray-500 ml-1">/{period}</span>
+            <span className="text-gray-500 ml-1">/ {period}</span>
           )}
         </div>
       </div>
@@ -53,7 +53,7 @@ const PlanCard = ({
           isPopular ? 'btn-primary' : 'btn-outline'
         }`}
       >
-        Choose Plan
+        Escolher Plano
       </Link>
     </div>
   )

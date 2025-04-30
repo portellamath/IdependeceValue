@@ -6,50 +6,50 @@ import PlanCard from '../components/PlanCard'
 const Plans = () => {
   const plans = [
     {
-      title: 'Essential Plan',
+      title: 'Plano Essencial',
       price: '199',
-      period: 'month',
-      description: 'Perfect for individuals and small businesses just getting started.',
+      period: 'mês',
+      description: 'Perfeito para indivíduos e pequenas empresas que estão começando.',
       features: [
-        'Basic financial assessment',
-        'Monthly financial reports',
-        'Email support',
-        'Annual portfolio review',
-        'Basic tax planning'
+        'Avaliação financeira básica',
+        'Relatórios financeiros mensais',
+        'Suporte por e-mail',
+        'Revisão anual de portfólio',
+        'Planejamento tributário básico'
       ],
       isPopular: false
     },
     {
-      title: 'Premium Plan',
+      title: 'Plano Premium',
       price: '499',
-      period: 'month',
-      description: 'Our most popular plan for growing businesses and serious investors.',
+      period: 'mês',
+      description: 'Nosso plano mais popular para empresas em crescimento e investidores sérios.',
       features: [
-        'Comprehensive financial assessment',
-        'Bi-weekly financial reports',
-        'Priority email and phone support',
-        'Quarterly portfolio reviews',
-        'Advanced tax strategies',
-        'Retirement planning',
-        'Dedicated financial advisor'
+        'Avaliação financeira completa',
+        'Relatórios financeiros quinzenais',
+        'Suporte prioritário por e-mail e telefone',
+        'Revisões trimestrais de portfólio',
+        'Estratégias fiscais avançadas',
+        'Planejamento de aposentadoria',
+        'Consultor financeiro dedicado'
       ],
       isPopular: true
     },
     {
-      title: 'Corporate Plan',
+      title: 'Plano Corporativo',
       price: '999',
-      period: 'month',
-      description: 'Enterprise-level financial management for established organizations.',
+      period: 'mês',
+      description: 'Gestão financeira de nível empresarial para organizações estabelecidas.',
       features: [
-        'Enterprise financial strategy',
-        'Weekly comprehensive reports',
-        '24/7 priority support',
-        'Monthly in-depth reviews',
-        'Custom tax optimization',
-        'Succession planning',
-        'Team of dedicated advisors',
-        'Risk management solutions',
-        'Merger & acquisition advisory'
+        'Estratégia financeira corporativa',
+        'Relatórios completos semanais',
+        'Suporte prioritário 24/7',
+        'Revisões mensais detalhadas',
+        'Otimização fiscal personalizada',
+        'Planejamento sucessório',
+        'Equipe de consultores dedicados',
+        'Soluções de gestão de riscos',
+        'Consultoria para fusões e aquisições'
       ],
       isPopular: false
     }
@@ -57,54 +57,54 @@ const Plans = () => {
 
   const customPlans = [
     {
-      title: 'Financial Planning',
-      description: 'Comprehensive financial planning tailored to your specific goals and circumstances.',
+      title: 'Planejamento Financeiro',
+      description: 'Planejamento financeiro completo adaptado aos seus objetivos e circunstâncias específicas.',
       link: '/contact'
     },
     {
-      title: 'Investment Management',
-      description: 'Professional management of your investment portfolio to maximize returns and minimize risks.',
+      title: 'Gestão de Investimentos',
+      description: 'Gestão profissional do seu portfólio de investimentos para maximizar retornos e minimizar riscos.',
       link: '/contact'
     },
     {
-      title: 'Retirement Planning',
-      description: 'Strategic planning to ensure a comfortable and secure retirement.',
+      title: 'Planejamento de Aposentadoria',
+      description: 'Planejamento estratégico para garantir uma aposentadoria confortável e segura.',
       link: '/contact'
     },
     {
-      title: 'Business Consulting',
-      description: 'Expert financial consulting for businesses of all sizes, from startups to established enterprises.',
+      title: 'Consultoria Empresarial',
+      description: 'Consultoria financeira especializada para empresas de todos os tamanhos, desde startups até grandes corporações.',
       link: '/contact'
     }
   ]
 
   return (
     <>
-      {/* Header Section */}
+      {/* Seção de Cabeçalho */}
       <section className="bg-primary-500 text-white py-24">
         <div className="container text-center">
           <h1 
             className="text-4xl md:text-5xl font-bold mb-6"
             data-aos="fade-up"
           >
-            Financial Management Plans
+            Planos de Gestão Financeira
           </h1>
           <p 
             className="text-xl text-gray-200 max-w-3xl mx-auto"
             data-aos="fade-up"
             data-aos-delay="100"
           >
-            Choose the perfect plan to meet your financial goals and transform your financial future.
+            Escolha o plano perfeito para atingir seus objetivos financeiros e transformar seu futuro financeiro.
           </p>
         </div>
       </section>
 
-      {/* Plans Section */}
+      {/* Seção de Planos */}
       <section className="section bg-gray-50">
         <div className="container">
           <SectionHeading 
-            title="Our Service Plans"
-            subtitle="Select the plan that best fits your financial needs and goals."
+            title="Nossos Planos de Serviço"
+            subtitle="Selecione o plano que melhor atende às suas necessidades e objetivos financeiros."
             centered={true}
           />
           
@@ -129,21 +129,21 @@ const Plans = () => {
             data-aos-delay="300"
           >
             <p className="text-gray-600 mb-6">
-              Not sure which plan is right for you? Contact us for a personalized recommendation.
+              Não tem certeza de qual plano é o ideal para você? Entre em contato para uma recomendação personalizada.
             </p>
             <Link to="/contact" className="btn btn-primary">
-              Get Custom Recommendation
+              Obter Recomendação Personalizada
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Custom Solutions */}
+      {/* Soluções Personalizadas */}
       <section className="section">
         <div className="container">
           <SectionHeading 
-            title="Specialized Financial Services"
-            subtitle="In addition to our standard plans, we offer specialized services to address specific financial needs."
+            title="Serviços Financeiros Especializados"
+            subtitle="Além dos nossos planos padrão, oferecemos serviços especializados para atender a necessidades financeiras específicas."
             centered={true}
           />
           
@@ -161,7 +161,7 @@ const Plans = () => {
                   to={plan.link} 
                   className="inline-flex items-center text-secondary-500 hover:text-secondary-600 font-medium"
                 >
-                  Learn More <FiArrowRight className="ml-2" />
+                  Saiba Mais <FiArrowRight className="ml-2" />
                 </Link>
               </div>
             ))}
@@ -169,12 +169,12 @@ const Plans = () => {
         </div>
       </section>
 
-      {/* FAQ Section */}
+      {/* Seção de Perguntas Frequentes */}
       <section className="section bg-gray-50">
         <div className="container">
           <SectionHeading 
-            title="Frequently Asked Questions"
-            subtitle="Find answers to common questions about our financial management plans."
+            title="Perguntas Frequentes"
+            subtitle="Encontre respostas para perguntas comuns sobre nossos planos de gestão financeira."
             centered={true}
           />
           
@@ -183,9 +183,9 @@ const Plans = () => {
               className="mb-6"
               data-aos="fade-up"
             >
-              <h3 className="text-xl font-semibold text-primary-500 mb-3">How do I know which plan is right for me?</h3>
+              <h3 className="text-xl font-semibold text-primary-500 mb-3">Como saber qual plano é ideal para mim?</h3>
               <p className="text-gray-600">
-                The best plan depends on your specific financial situation, goals, and the complexity of your financial needs. Our Essential Plan is great for individuals just starting their financial journey, while our Premium and Corporate Plans offer more comprehensive services for those with more complex financial situations.
+                O melhor plano depende da sua situação financeira específica, objetivos e complexidade das suas necessidades financeiras. Nosso Plano Essencial é ótimo para indivíduos que estão começando sua jornada financeira, enquanto nossos Planos Premium e Corporativo oferecem serviços mais completos para quem possui situações financeiras mais complexas.
               </p>
             </div>
             
@@ -194,9 +194,9 @@ const Plans = () => {
               data-aos="fade-up"
               data-aos-delay="100"
             >
-              <h3 className="text-xl font-semibold text-primary-500 mb-3">Can I upgrade or downgrade my plan later?</h3>
+              <h3 className="text-xl font-semibold text-primary-500 mb-3">Posso atualizar ou reduzir meu plano depois?</h3>
               <p className="text-gray-600">
-                Absolutely! You can upgrade or downgrade your plan at any time. We understand that financial needs change, and we make it easy to adjust your services accordingly.
+                Claro! Você pode atualizar ou reduzir seu plano a qualquer momento. Sabemos que as necessidades financeiras mudam, e facilitamos o ajuste dos serviços de acordo.
               </p>
             </div>
             
@@ -205,9 +205,9 @@ const Plans = () => {
               data-aos="fade-up"
               data-aos-delay="200"
             >
-              <h3 className="text-xl font-semibold text-primary-500 mb-3">Is there a long-term commitment required?</h3>
+              <h3 className="text-xl font-semibold text-primary-500 mb-3">É necessário um compromisso de longo prazo?</h3>
               <p className="text-gray-600">
-                No long-term commitment is required. All of our plans are billed monthly, and you can cancel at any time. However, financial management typically yields the best results when approached as a long-term strategy.
+                Não, não é necessário um compromisso de longo prazo. Todos os nossos planos são cobrados mensalmente, e você pode cancelar a qualquer momento. No entanto, a gestão financeira geralmente gera melhores resultados quando abordada como uma estratégia de longo prazo.
               </p>
             </div>
             
@@ -215,31 +215,31 @@ const Plans = () => {
               data-aos="fade-up"
               data-aos-delay="300"
             >
-              <h3 className="text-xl font-semibold text-primary-500 mb-3">Do you offer customized plans?</h3>
+              <h3 className="text-xl font-semibold text-primary-500 mb-3">Vocês oferecem planos personalizados?</h3>
               <p className="text-gray-600">
-                Yes, we can create customized financial management plans tailored to your specific needs. Contact our team to discuss your requirements and we'll develop a personalized solution.
+                Sim, podemos criar planos de gestão financeira personalizados adaptados às suas necessidades específicas. Entre em contato com nossa equipe para discutir seus requisitos e criaremos uma solução personalizada.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Seção de CTA */}
       <section className="section bg-primary-500 text-white">
         <div className="container text-center">
           <div data-aos="fade-up" className="max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Ready to Get Started?
+              Pronto para Começar?
             </h2>
             <p className="text-lg text-gray-200 mb-8">
-              Take the first step toward achieving your financial goals with IV Value.
+              Dê o primeiro passo para atingir seus objetivos financeiros com a IV Value.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/contact" className="btn bg-secondary-500 hover:bg-secondary-600 text-white">
-                Contact Us Today
+                Contate-nos Hoje
               </Link>
               <Link to="/solutions" className="btn bg-white text-primary-500 hover:bg-gray-100">
-                Explore Our Solutions
+                Explore Nossas Soluções
               </Link>
             </div>
           </div>

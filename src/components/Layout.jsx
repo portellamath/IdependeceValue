@@ -6,7 +6,7 @@ import Footer from './Footer'
 const Layout = () => {
   const { pathname } = useLocation()
 
-  // Scroll to top on page change
+  // Rolar para o topo ao mudar de página
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [pathname])

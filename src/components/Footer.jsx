@@ -12,7 +12,7 @@ const Footer = () => {
           <div className="space-y-4">
             <Logo size="large" />
             <p className="text-gray-400 mt-4">
-              Transforming financial futures with expert management solutions since 2010.
+              Transformando futuros financeiros com soluções de gestão especializadas.
             </p>
             <div className="flex space-x-4 pt-2">
               <a href="https://facebook.com" target="_blank" rel="noopener" className="text-gray-400 hover:text-secondary-500 transition-colors">
@@ -31,76 +31,80 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="text-xl font-semibold mb-6">Quick Links</h3>
+            <h3 className="text-xl font-semibold mb-6">Links Rápidos</h3>
             <ul className="space-y-3">
               <li>
                 <Link to="/" className="text-gray-400 hover:text-secondary-500 transition-colors">
-                  Home
+                  Início
                 </Link>
               </li>
               <li>
                 <Link to="/plans" className="text-gray-400 hover:text-secondary-500 transition-colors">
-                  Plans
+                  Planos
                 </Link>
               </li>
               <li>
                 <Link to="/solutions" className="text-gray-400 hover:text-secondary-500 transition-colors">
-                  Solutions
+                  Soluções
                 </Link>
               </li>
               <li>
                 <Link to="/contact" className="text-gray-400 hover:text-secondary-500 transition-colors">
-                  Contact
+                  Contato
                 </Link>
               </li>
             </ul>
           </div>
 
           <div>
-            <h3 className="text-xl font-semibold mb-6">Solutions</h3>
+            <h3 className="text-xl font-semibold mb-6">Soluções</h3>
             <ul className="space-y-3">
               <li>
                 <Link to="/solutions" className="text-gray-400 hover:text-secondary-500 transition-colors">
-                  Financial Planning
+                  Planejamento Financeiro
                 </Link>
               </li>
               <li>
                 <Link to="/solutions" className="text-gray-400 hover:text-secondary-500 transition-colors">
-                  Investment Management
+                  Gestão de Investimentos
                 </Link>
               </li>
               <li>
                 <Link to="/solutions" className="text-gray-400 hover:text-secondary-500 transition-colors">
-                  Cost Analysis
+                  Análise de Custos
                 </Link>
               </li>
               <li>
                 <Link to="/solutions" className="text-gray-400 hover:text-secondary-500 transition-colors">
-                  Personalized Consulting
+                  Consultoria Personalizada
                 </Link>
               </li>
             </ul>
           </div>
 
           <div>
-            <h3 className="text-xl font-semibold mb-6">Contact</h3>
+            <h3 className="text-xl font-semibold mb-6">Contato</h3>
             <ul className="space-y-3">
               <li className="text-gray-400">
-                123 Finance Street, Suite 200<br />
-                New York, NY 10001
+              Av. Tiradentes, 1211<br />
+                Itu, SP 13309-640
               </li>
               <li className="text-gray-400">
-                <a href="tel:+12125557890" className="hover:text-secondary-500 transition-colors">+1 (212) 555-7890</a>
+                <a href="tel:+5511999999999" className="hover:text-secondary-500 transition-colors">
+                  +55 (19) 99948-1590
+                </a>
               </li>
               <li className="text-gray-400">
-                <a href="mailto:info@ivvalue.com" className="hover:text-secondary-500 transition-colors">info@ivvalue.com</a>
+                <a href="mailto:info@ivvalue.com" className="hover:text-secondary-500 transition-colors">
+                  info@ivvalue.com
+                </a>
               </li>
             </ul>
           </div>
         </div>
 
         <div className="pt-8 border-t border-gray-800 text-center text-sm text-gray-500">
-          <p>© {year} IV Value Financial Management. All rights reserved.</p>
+          <p>© {year} IV Value Gestão Financeira. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>

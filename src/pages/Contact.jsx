@@ -7,26 +7,26 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: <FiPhone size={24} />,
-      title: 'Phone',
-      details: ['+1 (212) 555-7890', '+1 (212) 555-7891'],
-      links: ['tel:+12125557890', 'tel:+12125557891']
+      title: 'Telefone',
+      details: ['+55 19 99948-1590'],
+      links: ['tel:+5519999481590']
     },
     {
       icon: <FiMail size={24} />,
-      title: 'Email',
+      title: 'E-mail',
       details: ['info@ivvalue.com', 'support@ivvalue.com'],
       links: ['mailto:info@ivvalue.com', 'mailto:support@ivvalue.com']
     },
     {
       icon: <FiMapPin size={24} />,
-      title: 'Location',
-      details: ['123 Finance Street, Suite 200', 'New York, NY 10001'],
-      links: ['https://maps.google.com/?q=123+Finance+Street,+New+York,+NY+10001']
+      title: 'Localização',
+      details: ['FATEC Itu - Rua XV de Novembro, 481', 'Itu, SP 13300-000'],
+      links: ['https://maps.google.com/?q=Rua+XV+de+Novembro,+481,+Itu,+SP,+13300-000']
     },
     {
       icon: <FiClock size={24} />,
-      title: 'Business Hours',
-      details: ['Monday-Friday: 9AM-6PM', 'Saturday: 10AM-2PM'],
+      title: 'Horário de Atendimento',
+      details: ['Segunda a Sexta: 9h-18h', 'Sábado: 10h-14h'],
       links: []
     }
   ]
@@ -40,14 +40,14 @@ const Contact = () => {
             className="text-4xl md:text-5xl font-bold mb-6"
             data-aos="fade-up"
           >
-            Contact Us
+            Entre em Contato
           </h1>
           <p 
             className="text-xl text-gray-200 max-w-3xl mx-auto"
             data-aos="fade-up"
             data-aos-delay="100"
           >
-            Get in touch with our team of financial experts to discuss how we can help you achieve your financial goals.
+            Entre em contato com nossa equipe de especialistas financeiros para discutir como podemos ajudá-lo a alcançar seus objetivos financeiros.
           </p>
         </div>
       </section>
@@ -56,8 +56,8 @@ const Contact = () => {
       <section className="section bg-gray-50">
         <div className="container">
           <SectionHeading 
-            title="Get In Touch"
-            subtitle="We're here to help you with any questions you may have about our financial management services."
+            title="Entre em Contato"
+            subtitle="Estamos aqui para ajudar com qualquer dúvida que você tenha sobre nossos serviços de gestão financeira."
             centered={true}
           />
           
@@ -93,16 +93,16 @@ const Contact = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div>
               <SectionHeading 
-                title="Send Us a Message"
-                subtitle="Fill out the form below and one of our financial experts will get back to you within 24 hours."
+                title="Envie uma Mensagem"
+                subtitle="Preencha o formulário abaixo e um de nossos especialistas financeiros entrará em contato com você em até 24 horas."
               />
               <ContactForm />
             </div>
             
             <div>
               <SectionHeading 
-                title="Our Location"
-                subtitle="Visit our office in the heart of New York's financial district."
+                title="Nossa Localização"
+                subtitle="Visite nosso escritório no coração do distrito financeiro de Nova York."
               />
               <MapComponent />
             </div>
@@ -114,8 +114,8 @@ const Contact = () => {
       <section className="section bg-white">
         <div className="container">
           <SectionHeading 
-            title="Frequently Asked Questions"
-            subtitle="Find answers to common questions about contacting our team and getting started."
+            title="Perguntas Frequentes"
+            subtitle="Encontre respostas para perguntas comuns sobre como entrar em contato com nossa equipe e começar."
             centered={true}
           />
           
@@ -124,9 +124,9 @@ const Contact = () => {
               className="bg-gray-50 p-6 rounded-lg"
               data-aos="fade-up"
             >
-              <h3 className="text-xl font-semibold text-primary-500 mb-3">How quickly can I expect a response?</h3>
+              <h3 className="text-xl font-semibold text-primary-500 mb-3">Quanto tempo leva para obter uma resposta?</h3>
               <p className="text-gray-600">
-                We typically respond to all inquiries within 24 business hours. For urgent matters, we recommend calling our office directly.
+                Normalmente, respondemos todas as consultas em até 24 horas úteis. Para assuntos urgentes, recomendamos ligar diretamente para nosso escritório.
               </p>
             </div>
             
@@ -135,9 +135,9 @@ const Contact = () => {
               data-aos="fade-up"
               data-aos-delay="100"
             >
-              <h3 className="text-xl font-semibold text-primary-500 mb-3">Do I need to prepare anything for the initial consultation?</h3>
+              <h3 className="text-xl font-semibold text-primary-500 mb-3">Preciso preparar algo para a consulta inicial?</h3>
               <p className="text-gray-600">
-                While not required, having a general understanding of your financial goals and current financial situation will help us provide more targeted guidance during the initial consultation.
+                Embora não seja obrigatório, ter uma noção geral de seus objetivos financeiros e situação financeira atual ajudará a fornecer uma orientação mais direcionada durante a consulta inicial.
               </p>
             </div>
             
@@ -146,9 +146,9 @@ const Contact = () => {
               data-aos="fade-up"
               data-aos-delay="200"
             >
-              <h3 className="text-xl font-semibold text-primary-500 mb-3">Is the initial consultation free?</h3>
+              <h3 className="text-xl font-semibold text-primary-500 mb-3">A consulta inicial é gratuita?</h3>
               <p className="text-gray-600">
-                Yes, we offer a complimentary 30-minute initial consultation to discuss your financial needs and determine how we can best assist you.
+                Sim, oferecemos uma consulta inicial gratuita de 30 minutos para discutir suas necessidades financeiras e determinar como podemos melhor assisti-lo.
               </p>
             </div>
             
@@ -157,9 +157,9 @@ const Contact = () => {
               data-aos="fade-up"
               data-aos-delay="300"
             >
-              <h3 className="text-xl font-semibold text-primary-500 mb-3">Can I schedule a virtual meeting?</h3>
+              <h3 className="text-xl font-semibold text-primary-500 mb-3">Posso agendar uma reunião virtual?</h3>
               <p className="text-gray-600">
-                Absolutely! We offer both in-person and virtual meetings to accommodate your preferences and schedule.
+                Claro! Oferecemos reuniões presenciais e virtuais para acomodar suas preferências e agenda.
               </p>
             </div>
           </div>
@@ -171,13 +171,13 @@ const Contact = () => {
         <div className="container text-center">
           <div className="max-w-3xl mx-auto" data-aos="fade-up">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Ready to Get Started?
+              Pronto para Começar?
             </h2>
             <p className="text-lg text-gray-200 mb-8">
-              Take the first step toward financial success by contacting our team today.
+              Dê o primeiro passo rumo ao sucesso financeiro entrando em contato com nossa equipe hoje mesmo.
             </p>
-            <a href="tel:+12125557890" className="btn bg-secondary-500 hover:bg-secondary-600 text-white">
-              Call Us Now
+            <a href="tel:+5519999481590" className="btn bg-secondary-500 hover:bg-secondary-600 text-white">
+              Ligue Agora
             </a>
           </div>
         </div>
