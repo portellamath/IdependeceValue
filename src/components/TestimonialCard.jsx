@@ -1,7 +1,9 @@
 import { FiStar } from 'react-icons/fi'
 
+// Componente funcional TestimonialCard para exibir depoimentos com avaliação e informações do autor
 const TestimonialCard = ({ author, position, content, image, rating = 5, delayIndex = 0 }) => {
   return (
+    // Cartão de depoimento com animação de fade-up (AOS)
     <div 
       className="bg-white p-6 rounded-lg shadow-card transition-shadow duration-300 hover:shadow-card-hover"
       data-aos="fade-up"
@@ -30,4 +32,5 @@ const TestimonialCard = ({ author, position, content, image, rating = 5, delayIn
   )
 }
 
+// Exporta o componente para ser utilizado em outras partes do código
 export default TestimonialCard

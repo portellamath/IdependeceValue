@@ -1,6 +1,9 @@
+// Importa o componente Link do React Router para navegação interna
 import { Link } from 'react-router-dom'
 
+// Componente funcional que exibe o logotipo da empresa com diferentes tamanhos
 const Logo = ({ size = 'default' }) => {
+  // Define as classes de tamanho com base na prop `size`
   const sizeClasses = {
     small: 'text-xl',
     default: 'text-2xl',
@@ -8,19 +11,26 @@ const Logo = ({ size = 'default' }) => {
   }
 
   return (
-    <Link to="/" className={`flex items-center font-heading ${sizeClasses[size] || sizeClasses.default}`}>
-      <div className="flex items-center justify-center w-10 h-10 mr-2 text-white bg-primary-500 rounded">
-        <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M7 16H13" stroke="#36AE7C" strokeWidth="2.5" strokeLinecap="round"/>
-          <path d="M7 10H25" stroke="#36AE7C" strokeWidth="2.5" strokeLinecap="round"/>
-          <path d="M19 16H25" stroke="#36AE7C" strokeWidth="2.5" strokeLinecap="round"/>
-          <path d="M7 22H25" stroke="#36AE7C" strokeWidth="2.5" strokeLinecap="round"/>
-          <path d="M16 13L16 19" stroke="#36AE7C" strokeWidth="2.5" strokeLinecap="round"/>
-        </svg>
+    // Link que redireciona para a página inicial
+    <Link 
+      to="/" 
+      className={`flex items-center font-heading ${sizeClasses[size] || sizeClasses.default}`}
+    >
+      {/* Container do ícone (logomarca) */}
+      <div className="flex items-center justify-center w-15 h-15 mr-2">
+        {/* Imagem da logo com arredondamento e escala apropriada */}
+        <img 
+          src="/public/2.png"  // Caminho da imagem da logo (certifique-se que está corretamente servida no projeto)
+          alt="Logo"  // Texto alternativo para acessibilidade
+          className="w-14 h-14 object-contain rounded-xl" 
+        />
       </div>
+
+      {/* Nome da empresa ao lado do ícone */}
       <span className="font-bold text-primary-500">IV Value</span>
     </Link>
   )
 }
 
+// Exporta o componente para ser usado em outras partes do app
 export default Logo

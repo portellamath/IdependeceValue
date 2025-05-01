@@ -1,9 +1,10 @@
-import { FiArrowRight } from 'react-icons/fi'
-import { Link } from 'react-router-dom'
-import SectionHeading from '../components/SectionHeading'
-import PlanCard from '../components/PlanCard'
+import { FiArrowRight } from 'react-icons/fi' // Importando o ícone de seta para a direita
+import { Link } from 'react-router-dom' // Importando o Link para navegação entre páginas
+import SectionHeading from '../components/SectionHeading' // Importando o componente de título de seção
+import PlanCard from '../components/PlanCard' // Importando o componente que exibe os planos de serviço
 
 const Plans = () => {
+  // Array de planos oferecidos
   const plans = [
     {
       title: 'Plano Essencial',
@@ -55,6 +56,7 @@ const Plans = () => {
     }
   ]
 
+  // Array de serviços personalizados oferecidos
   const customPlans = [
     {
       title: 'Planejamento Financeiro',
@@ -85,14 +87,14 @@ const Plans = () => {
         <div className="container text-center">
           <h1 
             className="text-4xl md:text-5xl font-bold mb-6"
-            data-aos="fade-up"
+            data-aos="fade-up" // Efeito de animação ao aparecer
           >
             Planos de Gestão Financeira
           </h1>
           <p 
             className="text-xl text-gray-200 max-w-3xl mx-auto"
             data-aos="fade-up"
-            data-aos-delay="100"
+            data-aos-delay="100" // Animação com atraso
           >
             Escolha o plano perfeito para atingir seus objetivos financeiros e transformar seu futuro financeiro.
           </p>
@@ -105,10 +107,11 @@ const Plans = () => {
           <SectionHeading 
             title="Nossos Planos de Serviço"
             subtitle="Selecione o plano que melhor atende às suas necessidades e objetivos financeiros."
-            centered={true}
+            centered={true} // Centraliza o título e subtítulo
           />
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Mapeando os planos e renderizando o componente PlanCard */}
             {plans.map((plan, index) => (
               <PlanCard 
                 key={index}
@@ -118,7 +121,7 @@ const Plans = () => {
                 description={plan.description}
                 features={plan.features}
                 isPopular={plan.isPopular}
-                delayIndex={index}
+                delayIndex={index} // Passando o índice para animação
               />
             ))}
           </div>
@@ -126,11 +129,12 @@ const Plans = () => {
           <div 
             className="mt-12 text-center"
             data-aos="fade-up"
-            data-aos-delay="300"
+            data-aos-delay="300" // Animação com atraso
           >
             <p className="text-gray-600 mb-6">
               Não tem certeza de qual plano é o ideal para você? Entre em contato para uma recomendação personalizada.
             </p>
+            {/* Link para a página de contato */}
             <Link to="/contact" className="btn btn-primary">
               Obter Recomendação Personalizada
             </Link>
@@ -138,7 +142,7 @@ const Plans = () => {
         </div>
       </section>
 
-      {/* Soluções Personalizadas */}
+      {/* Seção de Serviços Personalizados */}
       <section className="section">
         <div className="container">
           <SectionHeading 
@@ -148,15 +152,17 @@ const Plans = () => {
           />
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Mapeando os serviços personalizados */}
             {customPlans.map((plan, index) => (
               <div 
                 key={index} 
                 className="bg-white p-6 rounded-lg shadow-card hover:shadow-card-hover transition-all duration-300"
                 data-aos="fade-up"
-                data-aos-delay={index * 100}
+                data-aos-delay={index * 100} // Animação com atraso variável
               >
                 <h3 className="text-xl font-semibold text-primary-500 mb-3">{plan.title}</h3>
                 <p className="text-gray-600 mb-4">{plan.description}</p>
+                {/* Link para página de contato */}
                 <Link 
                   to={plan.link} 
                   className="inline-flex items-center text-secondary-500 hover:text-secondary-600 font-medium"
@@ -179,6 +185,7 @@ const Plans = () => {
           />
           
           <div className="max-w-3xl mx-auto">
+            {/* Cada pergunta frequente */}
             <div 
               className="mb-6"
               data-aos="fade-up"
@@ -189,6 +196,7 @@ const Plans = () => {
               </p>
             </div>
             
+            {/* Outras perguntas frequentes */}
             <div 
               className="mb-6"
               data-aos="fade-up"
@@ -224,7 +232,7 @@ const Plans = () => {
         </div>
       </section>
 
-      {/* Seção de CTA */}
+      {/* Seção de CTA (Chamada para Ação) */}
       <section className="section bg-primary-500 text-white">
         <div className="container text-center">
           <div data-aos="fade-up" className="max-w-3xl mx-auto">
