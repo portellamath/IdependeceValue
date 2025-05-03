@@ -26,7 +26,7 @@ const Logo = ({ tamanhoLogo = 'default' }) => {
 
 
       {/* Nome da empresa exibido ao lado do ícone */}
-      <span className="font-bold text-primary-500">IV Value</span>
+      <span className="font-bold text-primary-500">Independent Value</span>
     </Link>
   );
 };

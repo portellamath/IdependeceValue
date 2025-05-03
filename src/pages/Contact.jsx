@@ -48,7 +48,7 @@ const Contact = () => {
             data-aos="fade-up"
             data-aos-delay="100" // Atraso na animação
           >
-            Entre em contato com nossa equipe de especialistas financeiros para discutir como podemos ajudá-lo a alcançar seus objetivos financeiros.
+            Fale com nossos especialistas e transforme seu futuro financeiro.
           </p>
         </div>
       </section>
@@ -57,8 +57,8 @@ const Contact = () => {
       <section className="section bg-gray-50">
         <div className="container">
           <SectionHeading 
-            title="Entre em Contato" // Título da seção
-            subtitle="Estamos aqui para ajudar com qualquer dúvida que você tenha sobre nossos serviços de gestão financeira."
+            title="Como entrar em contato?" // Título da seção
+            subtitle="Estamos prontos para ajudar você a organizar, crescer e proteger suas finanças."
             centered={true} // Centralizar o título e o subtítulo
           />
           
@@ -131,9 +131,9 @@ const Contact = () => {
               className="bg-gray-50 p-6 rounded-lg"
               data-aos="fade-up" // Animação de fade-up
             >
-              <h3 className="text-xl font-semibold text-primary-500 mb-3">Quanto tempo leva para obter uma resposta?</h3>
+              <h3 className="text-xl font-semibold text-primary-500 mb-3">Em quanto tempo recebo uma resposta?</h3>
               <p className="text-gray-600">
-                Normalmente, respondemos todas as consultas em até 24 horas úteis. Para assuntos urgentes, recomendamos ligar diretamente para nosso escritório.
+              Respondemos em até 24 horas úteis. Para urgências, ligue diretamente para nosso número.
               </p>
             </div>
             
@@ -145,7 +145,7 @@ const Contact = () => {
             >
               <h3 className="text-xl font-semibold text-primary-500 mb-3">Preciso preparar algo para a consulta inicial?</h3>
               <p className="text-gray-600">
-                Embora não seja obrigatório, ter uma noção geral de seus objetivos financeiros e situação financeira atual ajudará a fornecer uma orientação mais direcionada durante a consulta inicial.
+              Não é obrigatório, mas se tiver informações sobre seus objetivos e situação financeira, podemos ajudar ainda melhor.
               </p>
             </div>
             
@@ -157,7 +157,7 @@ const Contact = () => {
             >
               <h3 className="text-xl font-semibold text-primary-500 mb-3">A consulta inicial é gratuita?</h3>
               <p className="text-gray-600">
-                Sim, oferecemos uma consulta inicial gratuita de 30 minutos para discutir suas necessidades financeiras e determinar como podemos melhor assisti-lo.
+              Sim! Oferecemos uma consulta gratuita de 30 minutos para entender suas necessidades.
               </p>
             </div>
             
@@ -166,9 +166,9 @@ const Contact = () => {
               data-aos="fade-up"
               data-aos-delay="300" // Atraso na animação
             >
-              <h3 className="text-xl font-semibold text-primary-500 mb-3">Posso agendar uma reunião virtual?</h3>
+              <h3 className="text-xl font-semibold text-primary-500 mb-3">Posso agendar uma reunião online?</h3>
               <p className="text-gray-600">
-                Claro! Oferecemos reuniões presenciais e virtuais para acomodar suas preferências e agenda.
+              Claro! Atendemos presencialmente ou por videochamada, conforme sua preferência.
               </p>
             </div>
           </div>

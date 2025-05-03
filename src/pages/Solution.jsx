@@ -16,42 +16,42 @@ const Solution = () => {
     {
       icon: <FiPieChart size={24} />,
       title: 'Planejamento Financeiro',
-      description: 'Mapas financeiros completos, adaptados aos seus objetivos, tolerância ao risco e horizonte de tempo.'
+      description: 'Organizamos suas finanças com um plano claro, adaptado aos seus objetivos e realidade como MEI ou autônomo.'
     },
     {
       icon: <FiTrendingUp size={24} />,
       title: 'Gestão de Investimentos',
-      description: 'Gestão especializada da sua carteira de investimentos para maximizar retornos enquanto gerencia os riscos adequadamente.'
+      description: 'Indicamos as melhores opções para fazer seu dinheiro render mais e proteger seu futuro, sem complicação.'
     },
     {
       icon: <FiDollarSign size={24} />,
       title: 'Análise de Custos',
-      description: 'Análise detalhada de suas despesas para identificar oportunidades de redução de custos e melhoria da eficiência.'
+      description: 'Descubra onde está perdendo dinheiro e como reduzir despesas para aumentar seu lucro.'
     },
     {
       icon: <FiUser size={24} />,
       title: 'Consultoria Personalizada',
-      description: 'Sessões de consultoria individual com nossos especialistas financeiros para abordar suas preocupações e perguntas específicas.'
+      description: 'Sessões individuais com nossos especialistas para tirar dúvidas e resolver desafios financeiros específicos do seu negócio.'
     },
     {
       icon: <FiShield size={24} />,
       title: 'Gestão de Riscos',
-      description: 'Identificação e mitigação de riscos financeiros por meio de seguros apropriados e planejamento de contingência.'
+      description: 'Proteja seu negócio e sua renda contra imprevistos com um plano financeiro seguro.'
     },
     {
       icon: <FiBarChart2 size={24} />,
       title: 'Análise de Desempenho',
-      description: 'Relatórios regulares de desempenho e análises para mantê-lo informado sobre o progresso financeiro.'
+      description: 'Relatórios simples e claros para você acompanhar como suas finanças estão evoluindo mês a mês.'
     },
     {
       icon: <FiFileText size={24} />,
       title: 'Planejamento Tributário',
-      description: 'Planejamento tributário estratégico para minimizar sua carga tributária, garantindo total conformidade com as leis fiscais.'
+      description: 'Pague menos impostos de forma legal e sem dor de cabeça, com orientações específicas para MEIs e autônomos.'
     },
     {
       icon: <FiBriefcase size={24} />,
-      title: 'Serviços Financeiros para Empresas',
-      description: 'Serviços financeiros especializados para empresas, incluindo gestão de fluxo de caixa e estratégias de crescimento.'
+      title: 'Serviços para Pequenos Negócios',
+      description: 'Gestão de fluxo de caixa, estratégias para crescer e estruturação financeira para você sair da informalidade e ganhar mercado'
     }
   ]
 
@@ -59,27 +59,27 @@ const Solution = () => {
     {
       number: '01',
       title: 'Consulta Inicial',
-      description: 'Começamos com uma discussão abrangente para entender sua situação financeira, objetivos e desafios.'
+      description: 'Entendemos sua situação, seus objetivos e os desafios do seu negócio.'
     },
     {
       number: '02',
       title: 'Análise Financeira',
-      description: 'Nossa equipe realiza uma análise minuciosa da sua posição financeira atual, identificando pontos fortes e áreas para melhoria.'
+      description: 'Mapeamos sua real situação financeira e identificamos onde você pode melhorar.'
     },
     {
       number: '03',
       title: 'Desenvolvimento de Estratégia',
-      description: 'Com base na nossa análise, desenvolvemos uma estratégia financeira personalizada para ajudá-lo a alcançar seus objetivos específicos.'
+      description: 'Criamos um plano financeiro sob medida para você crescer com segurança.'
     },
     {
       number: '04',
       title: 'Implementação',
-      description: 'Trabalhamos com você para implementar as estratégias recomendadas, fazendo ajustes conforme necessário para garantir os melhores resultados.'
+      description: 'Te acompanhamos na aplicação das soluções, passo a passo.'
     },
     {
       number: '05',
       title: 'Gestão Contínua',
-      description: 'Nossa equipe fornece monitoramento contínuo e gestão do seu plano financeiro, ajustando conforme as circunstâncias mudam.'
+      description: 'Seguimos juntos, ajustando o plano conforme seu negócio evolui.'
     }
   ]
 
@@ -99,7 +99,7 @@ const Solution = () => {
             data-aos="fade-up"
             data-aos-delay="100"
           >
-            Soluções financeiras completas para ajudá-lo a alcançar seus objetivos financeiros.
+            Soluções completas para MEIs e Autônomos que querem crescer com segurança e transformar suas finanças.
           </p>
         </div>
       </section>
@@ -109,7 +109,7 @@ const Solution = () => {
         <div className="container">
           <SectionHeading 
             title="Soluções de Gestão Financeira"
-            subtitle="Nosso portfólio de serviços é projetado para atender a todos os aspectos da sua vida financeira."
+            subtitle="Cuidamos de todos os aspectos da sua vida financeira para que você possa focar no que faz de melhor: tocar o seu negócio."
             centered={true}
           />
           
@@ -132,7 +132,7 @@ const Solution = () => {
         <div className="container">
           <SectionHeading 
             title="Nosso Processo"
-            subtitle="Seguímos uma abordagem estruturada para garantir que nossas soluções financeiras sejam adaptadas às suas necessidades específicas."
+            subtitle="Nosso processo é simples, personalizado e pensado para a realidade de quem empreende sozinho ou com uma pequena equipe."
             centered={true}
           />
           
@@ -168,7 +168,7 @@ const Solution = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <SectionHeading 
-                title="Por que escolher a IV Value?"
+                title="Por Que Escolher a Independent Value?"
                 subtitle="Combinamos experiência, personalização e tecnologia de ponta para entregar resultados financeiros superiores."
               />
               
@@ -176,28 +176,28 @@ const Solution = () => {
                 <div className="mb-6">
                   <h3 className="text-xl font-semibold text-primary-500 mb-2">Equipe Especializada</h3>
                   <p className="text-gray-600">
-                    Nossa equipe é composta por profissionais financeiros certificados com décadas de experiência combinada em várias disciplinas financeiras.
+                  Consultores experientes que entendem a realidade do pequeno empreendedor brasileiro.
                   </p>
                 </div>
                 
                 <div className="mb-6">
-                  <h3 className="text-xl font-semibold text-primary-500 mb-2">Abordagem Personalizada</h3>
+                  <h3 className="text-xl font-semibold text-primary-500 mb-2"> Soluções Personalizadas</h3>
                   <p className="text-gray-600">
-                    Reconhecemos que cada cliente é único, por isso desenvolvemos soluções personalizadas adaptadas às suas necessidades e objetivos específicos.
+                  Cada MEI e autônomo é único. Por isso, criamos planos sob medida para sua realidade.
                   </p>
                 </div>
                 
                 <div className="mb-6">
-                  <h3 className="text-xl font-semibold text-primary-500 mb-2">Processo Transparente</h3>
+                  <h3 className="text-xl font-semibold text-primary-500 mb-2">Transparência Total</h3>
                   <p className="text-gray-600">
-                    Acreditamos em total transparência em todas as nossas negociações, garantindo que você sempre entenda nossas recomendações e suas justificativas.
+                  Explicamos tudo de forma simples e sem "economês
                   </p>
                 </div>
                 
                 <div>
                   <h3 className="text-xl font-semibold text-primary-500 mb-2">Suporte Contínuo</h3>
                   <p className="text-gray-600">
-                    Nosso compromisso com o seu sucesso financeiro não termina no planejamento inicial; fornecemos suporte contínuo e ajustes conforme suas circunstâncias mudam.
+                  Você não fica sozinho: nosso time está sempre disponível para ajudar.
                   </p>
                 </div>
               </div>
@@ -230,10 +230,10 @@ const Solution = () => {
             >
               <h3 className="text-xl font-semibold text-primary-500 mb-3">Estratégia de Crescimento Empresarial</h3>
               <p className="text-gray-600 mb-4">
-                Uma empresa de tecnologia de médio porte nos procurou com problemas de fluxo de caixa, apesar do aumento da receita. Nossa equipe implementou uma estratégia financeira completa que melhorou o fluxo de caixa, reduziu despesas desnecessárias e criou um plano de crescimento sustentável. Em 18 meses, a empresa aumentou sua margem de lucro em 22% e expandiu para dois novos mercados.
+              Estava com problemas de fluxo de caixa. Em 18 meses, com nossa estratégia, aumentou o lucro em 22% e expandiu para novos mercados.
               </p>
               <div className="text-sm text-gray-500">
-                - TechGrowth Solutions, Setor de Tecnologia
+              Microempresa de Tecnologia
               </div>
             </div>
             
@@ -244,10 +244,10 @@ const Solution = () => {
             >
               <h3 className="text-xl font-semibold text-primary-500 mb-3">Planejamento para Aposentadoria</h3>
               <p className="text-gray-600 mb-4">
-                Um casal na faixa dos 50 anos estava preocupado com a preparação para a aposentadoria. Desenvolvemos uma estratégia personalizada de aposentadoria que otimizou seus investimentos, melhorou a eficiência fiscal e criou um roteiro claro para a aposentadoria. Com nossas recomendações, conseguiram se aposentar três anos antes do planejado, com a segurança financeira desejada.
+              Preocupado com a aposentadoria. Com nosso plano, conseguiram se aposentar 3 anos antes do previsto com tranquilidade financeira.
               </p>
               <div className="text-sm text-gray-500">
-                - Clientes Privados, Planejamento de Aposentadoria
+              Casal Autônomo
               </div>
             </div>
           </div>
@@ -262,7 +262,7 @@ const Solution = () => {
               Pronto para Transformar Seu Futuro Financeiro?
             </h2>
             <p className="text-lg text-gray-200 mb-8">
-              Entre em contato conosco hoje para discutir como nossas soluções financeiras podem ajudá-lo a alcançar seus objetivos.
+            Agende uma conversa gratuita com nossos especialistas e descubra como podemos ajudar você a crescer com segurança.
             </p>
             <a href="/contact" className="btn bg-secondary-500 hover:bg-secondary-600 text-white">
               Agendar uma Consultoria

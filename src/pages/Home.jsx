@@ -11,22 +11,22 @@ const Home = () => {
     {
       icon: <FiPieChart size={24} />, // Ícone representando a funcionalidade de planejamento financeiro
       title: 'Planejamento Financeiro Estratégico', // Título da funcionalidade
-      description: 'Mapas financeiros abrangentes adaptados aos seus objetivos e circunstâncias específicos.' // Descrição detalhada da funcionalidade
+      description: 'Mapas financeiros simples e personalizados, adaptados à realidade de quem é MEI ou autônomo.' // Descrição detalhada da funcionalidade
     },
     {
       icon: <FiTrendingUp size={24} />, // Ícone representando a funcionalidade de crescimento de investimentos
       title: 'Crescimento de Investimentos', // Título da funcionalidade
-      description: 'Estratégias de investimento especializadas para maximizar retornos enquanto gerencia riscos.' // Descrição detalhada da funcionalidade
+      description: 'Estratégias práticas e acessíveis para fazer seu dinheiro render, mesmo começando com pouco.' // Descrição detalhada da funcionalidade
     },
     {
       icon: <FiShield size={24} />, // Ícone representando a funcionalidade de gestão de riscos
       title: 'Gestão de Riscos', // Título da funcionalidade
-      description: 'Identificação proativa e mitigação de riscos financeiros para proteger seus ativos.' // Descrição detalhada da funcionalidade
+      description: 'Dicas e soluções para proteger seu negócio e sua renda contra imprevistos.' // Descrição detalhada da funcionalidade
     },
     {
       icon: <FiBarChart2 size={24} />, // Ícone representando a funcionalidade de análise de desempenho
       title: 'Análise de Desempenho', // Título da funcionalidade
-      description: 'Análises detalhadas e relatórios para acompanhar o progresso em direção aos seus objetivos financeiros.' // Descrição detalhada da funcionalidade
+      description: 'Relatórios claros para acompanhar o crescimento da sua atividade e tomar decisões melhores.' // Descrição detalhada da funcionalidade
     }
   ]
 
@@ -34,22 +34,22 @@ const Home = () => {
   const testimonials = [
     {
       author: 'Jennifer Adams', // Nome do autor do depoimento
-      position: 'CEO, TechStart Inc.', // Cargo do autor
-      content: 'A IV Value transformou nossas operações financeiras. A orientação estratégica deles nos ajudou a aumentar a rentabilidade em 28% em apenas um ano.', // Conteúdo do depoimento
+      position: 'Manicure e MEI', // Cargo do autor
+      content: 'A Independent Value me ajudou a organizar minhas finanças e aumentar meu lucro como MEI em 28% em apenas um ano.', // Conteúdo do depoimento
       image: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260', // URL da imagem do autor
       rating: 5 // Classificação em estrelas (5 estrelas)
     },
     {
       author: 'Michael Johnson', // Nome do autor do depoimento
-      position: 'Proprietário de Pequeno Negócio', // Cargo do autor
-      content: 'Como proprietário de um pequeno negócio, eu estava lutando com a gestão de fluxo de caixa. A IV Value forneceu estratégias simples, mas eficazes, que mudaram completamente o meu negócio.', // Conteúdo do depoimento
+      position: 'Designer Gráfico Autônomo', // Cargo do autor
+      content: 'Como autônomo, eu estava sempre no vermelho. A Independent Value me ensinou a controlar meu fluxo de caixa e hoje meu negócio está saudável', // Conteúdo do depoimento
       image: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260', // URL da imagem do autor
       rating: 5 // Classificação em estrelas (5 estrelas)
     },
     {
       author: 'Sarah Thompson', // Nome do autor do depoimento
-      position: 'Diretora de Operações, GlobalTech', // Cargo do autor
-      content: 'A abordagem personalizada deles para gestão financeira os diferencia. Eles não oferecem apenas soluções; eles dedicam tempo para entender as suas necessidades específicas.', // Conteúdo do depoimento
+      position: 'Artesã e Vendedora Online', // Cargo do autor
+      content: 'Eles realmente entendem a realidade do pequeno empreendedor. As soluções são práticas e funcionam no dia a dia.', // Conteúdo do depoimento
       image: 'https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260', // URL da imagem do autor
       rating: 5 // Classificação em estrelas (5 estrelas)
     }
@@ -63,8 +63,8 @@ const Home = () => {
       <section className="section bg-gray-50">
         <div className="container">
           <SectionHeading 
-            title="Criando Valor Financeiro Duradouro" // Título da seção
-            subtitle="Nossos serviços abrangentes são projetados para ajudá-lo a alcançar o sucesso financeiro por meio de planejamento estratégico e gestão especializada." // Subtítulo da seção
+            title="Criando Valor Financeiro Duradouro para Autônomos e MEIs" // Título da seção
+            subtitle="Nossos serviços foram pensados para ajudar você, que trabalha por conta própria, a organizar suas finanças, aumentar sua rentabilidade e crescer de forma segura com planejamento e gestão especializada." // Subtítulo da seção
             centered={true} // Indicando que o título e o subtítulo devem ser centralizados
           />
 
@@ -98,17 +98,18 @@ const Home = () => {
             <div>
               {/* Título e Subtítulo sobre a empresa */}
               <SectionHeading 
-                title="Gestão Financeira Especializada Desde 2010"
-                subtitle="Combinamos expertise da indústria com um serviço personalizado para entregar resultados excepcionais."
+                title="Solução Financeira Especializada"
+                subtitle="Combinamos tecnologia com atendimento personalizado para entregar soluções que realmente funcionam no dia a dia de quem empreende sozinho."
                 data_aos="fade-left" // Definindo animação para aparecer da esquerda
               />
               <div data-aos="fade-left" data-aos-delay="100">
                 {/* Descrição sobre a empresa */}
                 <p className="text-gray-600 mb-6">
-                  Na IV Value, acreditamos que o sucesso financeiro começa com uma base sólida de confiança e expertise. Nossa equipe de profissionais financeiros experientes traz décadas de experiência combinada para cada relacionamento com o cliente.
+                Na Independent Value, acreditamos que o sucesso financeiro do autônomo e do microempreendedor começa com uma base sólida: organização, planejamento e foco em resultados.
+                Nossa equipe está pronta para ajudar você a separar suas finanças pessoais das do negócio, controlar melhor seu fluxo de caixa e construir um futuro financeiro mais seguro e próspero.
                 </p>
                 <p className="text-gray-600 mb-8">
-                  Seja para planejar sua aposentadoria, gerenciar as finanças de um negócio ou otimizar seu portfólio de investimentos, nossa abordagem personalizada garante que suas necessidades e objetivos específicos sejam sempre nossa principal prioridade.
+                Seja para organizar seus recebimentos, planejar uma reserva de emergência ou começar a investir com mais confiança, nossa abordagem personalizada garante que suas metas estejam sempre no centro da solução.
                 </p>
                 {/* Link para a página de soluções */}
                 <Link to="/solutions" className="btn btn-primary">
@@ -155,7 +156,7 @@ const Home = () => {
               Pronto para Transformar o Seu Futuro Financeiro?
             </h2>
             <p className="text-lg text-gray-200 mb-8">
-              Dê o primeiro passo rumo ao sucesso financeiro conectando-se com nossa equipe de especialistas hoje mesmo.
+               Dê o primeiro passo rumo ao sucesso financeiro como autônomo ou MEI, conectando-se com nossa equipe hoje mesmo.
             </p>
             {/* Link para a página de contato */}
             <Link to="/contact" className="btn bg-secondary-500 hover:bg-secondary-600 text-white">

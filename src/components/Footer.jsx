@@ -20,7 +20,7 @@ const Footer = () => {
           <div className="space-y-4">
             <Logo size="large" /> {/* Componente de logotipo */}
             <p className="text-gray-400 mt-4">
-              Transformando futuros financeiros com soluções de gestão especializadas.
+            Transformando o futuro financeiro de autônomos e MEIs com soluções simples, acessíveis e eficazes.
             </p>
             {/* Ícones das redes sociais com links externos */}
             <div className="flex space-x-4 pt-2">
@@ -77,7 +77,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link to="/solutions" className="text-gray-400 hover:text-secondary-500 transition-colors">
-                  Gestão de Investimentos
+                Organização de Fluxo de Caixa
                 </Link>
               </li>
               <li>

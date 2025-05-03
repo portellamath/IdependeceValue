@@ -7,50 +7,49 @@ const Plans = () => {
   // Array de planos oferecidos
   const plans = [
     {
-      title: 'Plano Essencial',
-      price: '199',
+      title: 'Plano Gratuito',
+      price: '0,00',
       period: 'mês',
-      description: 'Perfeito para indivíduos e pequenas empresas que estão começando.',
+      description: 'Perfeito para quem está dando os primeiros passos na gestão financeira.',
       features: [
-        'Avaliação financeira básica',
-        'Relatórios financeiros mensais',
-        'Suporte por e-mail',
-        'Revisão anual de portfólio',
-        'Planejamento tributário básico'
+        'Diagnóstico financeiro inicial gratuito',
+        'Modelo simples de controle de fluxo de caixa (planilha)',
+        'Newsletter com dicas financeiras exclusivas',
+        'Acesso a lives e conteúdos educativos',
+        'Suporte por e-mail (básico)'
       ],
       isPopular: false
     },
     {
-      title: 'Plano Premium',
-      price: '499',
+      title: 'Plano Pro',
+      price: '19,99',
       period: 'mês',
-      description: 'Nosso plano mais popular para empresas em crescimento e investidores sérios.',
+      description: 'Ideal para MEIs e autônomos que querem melhorar resultados e se profissionalizar.',
       features: [
-        'Avaliação financeira completa',
-        'Relatórios financeiros quinzenais',
-        'Suporte prioritário por e-mail e telefone',
-        'Revisões trimestrais de portfólio',
-        'Estratégias fiscais avançadas',
-        'Planejamento de aposentadoria',
-        'Consultor financeiro dedicado'
+        'Avaliação financeira personalizada',
+        'Relatórios mensais com análise dos resultados',
+        'Ferramentas online para controle financeiro',
+        'Suporte por e-mail e WhatsApp',
+        'Revisão trimestral com consultor',
+        'Dicas e orientações fiscais para MEI/autônomos',
+        'Acesso a workshops exclusivos'
       ],
       isPopular: true
     },
     {
-      title: 'Plano Corporativo',
-      price: '999',
+      title: 'Plano Premium',
+      price: '49,99',
       period: 'mês',
-      description: 'Gestão financeira de nível empresarial para organizações estabelecidas.',
+      description: 'Para quem quer acompanhamento próximo, planejamento avançado e suporte total.',
       features: [
-        'Estratégia financeira corporativa',
-        'Relatórios completos semanais',
-        'Suporte prioritário 24/7',
-        'Revisões mensais detalhadas',
-        'Otimização fiscal personalizada',
-        'Planejamento sucessório',
-        'Equipe de consultores dedicados',
-        'Soluções de gestão de riscos',
-        'Consultoria para fusões e aquisições'
+        'Gestão financeira completa e personalizada',
+        'Relatórios quinzenais detalhados',
+        'Consultor financeiro dedicado',
+        'Suporte prioritário por WhatsApp e telefone',
+        'Planejamento tributário avançado',
+        'Estratégias de investimento personalizadas',
+        'Planejamento para aposentadoria e proteção patrimonial',
+        'Participação em mentorias com especialistas',
       ],
       isPopular: false
     }
@@ -65,17 +64,17 @@ const Plans = () => {
     },
     {
       title: 'Gestão de Investimentos',
-      description: 'Gestão profissional do seu portfólio de investimentos para maximizar retornos e minimizar riscos.',
+      description: 'Orientação para começar a investir com segurança, mesmo como MEI ou autônomo.',
       link: '/contact'
     },
     {
-      title: 'Planejamento de Aposentadoria',
-      description: 'Planejamento estratégico para garantir uma aposentadoria confortável e segura.',
+      title: 'Organização Financeira para MEIs e Autônomos',
+      description: 'Planejamento financeiro completo adaptado à sua atividade e ao seu faturamento.',
       link: '/contact'
     },
     {
       title: 'Consultoria Empresarial',
-      description: 'Consultoria financeira especializada para empresas de todos os tamanhos, desde startups até grandes corporações.',
+      description: 'Para pequenos negócios que estão crescendo e querem estruturar sua gestão financeira.',
       link: '/contact'
     }
   ]
@@ -96,7 +95,7 @@ const Plans = () => {
             data-aos="fade-up"
             data-aos-delay="100" // Animação com atraso
           >
-            Escolha o plano perfeito para atingir seus objetivos financeiros e transformar seu futuro financeiro.
+            Escolha o plano ideal para organizar suas finanças, aumentar seus lucros e transformar o futuro do seu negócio como MEI ou autônomo.
           </p>
         </div>
       </section>
@@ -106,7 +105,7 @@ const Plans = () => {
         <div className="container">
           <SectionHeading 
             title="Nossos Planos de Serviço"
-            subtitle="Selecione o plano que melhor atende às suas necessidades e objetivos financeiros."
+            subtitle="Escolha o plano ideal para organizar suas finanças, aumentar seus lucros e transformar o futuro do seu negócio como MEI ou autônomo.."
             centered={true} // Centraliza o título e subtítulo
           />
           
@@ -147,7 +146,7 @@ const Plans = () => {
         <div className="container">
           <SectionHeading 
             title="Serviços Financeiros Especializados"
-            subtitle="Além dos nossos planos padrão, oferecemos serviços especializados para atender a necessidades financeiras específicas."
+            subtitle="Além dos nossos planos, oferecemos soluções sob medida para quem quer ir além."
             centered={true}
           />
           
@@ -192,7 +191,7 @@ const Plans = () => {
             >
               <h3 className="text-xl font-semibold text-primary-500 mb-3">Como saber qual plano é ideal para mim?</h3>
               <p className="text-gray-600">
-                O melhor plano depende da sua situação financeira específica, objetivos e complexidade das suas necessidades financeiras. Nosso Plano Essencial é ótimo para indivíduos que estão começando sua jornada financeira, enquanto nossos Planos Premium e Corporativo oferecem serviços mais completos para quem possui situações financeiras mais complexas.
+              O plano ideal depende do seu faturamento, dos seus objetivos e da complexidade da sua atividade. O Plano Essencial é ótimo para quem está começando, enquanto o Premium e o Corporativo são mais completos para quem quer crescer ou já tem uma estrutura maior.
               </p>
             </div>
             
@@ -204,7 +203,7 @@ const Plans = () => {
             >
               <h3 className="text-xl font-semibold text-primary-500 mb-3">Posso atualizar ou reduzir meu plano depois?</h3>
               <p className="text-gray-600">
-                Claro! Você pode atualizar ou reduzir seu plano a qualquer momento. Sabemos que as necessidades financeiras mudam, e facilitamos o ajuste dos serviços de acordo.
+              Sim! Você pode mudar de plano a qualquer momento. Sabemos que o seu negócio evolui, e nossos serviços acompanham essa mudança.
               </p>
             </div>
             
@@ -215,7 +214,7 @@ const Plans = () => {
             >
               <h3 className="text-xl font-semibold text-primary-500 mb-3">É necessário um compromisso de longo prazo?</h3>
               <p className="text-gray-600">
-                Não, não é necessário um compromisso de longo prazo. Todos os nossos planos são cobrados mensalmente, e você pode cancelar a qualquer momento. No entanto, a gestão financeira geralmente gera melhores resultados quando abordada como uma estratégia de longo prazo.
+              Não. Nossos planos são cobrados mensalmente, e você pode cancelar quando quiser. Mas, claro, resultados financeiros sólidos surgem com acompanhamento contínuo.
               </p>
             </div>
             
@@ -225,7 +224,7 @@ const Plans = () => {
             >
               <h3 className="text-xl font-semibold text-primary-500 mb-3">Vocês oferecem planos personalizados?</h3>
               <p className="text-gray-600">
-                Sim, podemos criar planos de gestão financeira personalizados adaptados às suas necessidades específicas. Entre em contato com nossa equipe para discutir seus requisitos e criaremos uma solução personalizada.
+              Sim! Criamos planos sob medida para a sua realidade como MEI ou autônomo. Fale com nossa equipe e vamos montar a solução ideal para você.
               </p>
             </div>
           </div>
@@ -240,7 +239,7 @@ const Plans = () => {
               Pronto para Começar?
             </h2>
             <p className="text-lg text-gray-200 mb-8">
-              Dê o primeiro passo para atingir seus objetivos financeiros com a IV Value.
+            Dê o primeiro passo para organizar suas finanças e crescer com segurança com a Independent Value.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/contact" className="btn bg-secondary-500 hover:bg-secondary-600 text-white">

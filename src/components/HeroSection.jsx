@@ -38,7 +38,7 @@ const HeroSection = () => {
             data-aos="fade-up"
             data-aos-delay="100"
           >
-            Soluções especializadas em gestão financeira que geram valor duradouro e crescimento sustentável para empresas e pessoas físicas.
+            Soluções especializadas em gestão financeira que geram valor duradouro e crescimento sustentável para microempreendedores e profissionais autônomos em todo o Brasil.
           </p>
 
           {/* Botões de ação com responsividade e animações */}
