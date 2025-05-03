@@ -1,34 +1,41 @@
-import { Link } from 'react-router-dom'; // Importando o Link para permitir navegação entre as páginas da aplicação
+// Importa o Link do React Router para navegação sem recarregar a página
+import { Link } from 'react-router-dom';
 
-// Componente Logo - Este componente exibe o logo da empresa, com a possibilidade de ajustar o tamanho
+// Componente Logo - Mostra a logo da empresa e permite ajustar o tamanho via props
 const Logo = ({ tamanhoLogo = 'default' }) => {
-  // Definindo as classes CSS para os diferentes tamanhos do logo
+  // Define uma tabela com as classes CSS para cada tamanho possível
   const classesDeTamanhoLogo = {
-    pequeno: 'text-xl',  // Para o logo pequeno
-    default: 'text-2xl', // Tamanho padrão
-    grande: 'text-3xl',  // Para um logo grande
+    pequeno: 'text-xl',    // Tamanho pequeno
+    default: 'text-2xl',   // Tamanho padrão
+    grande: 'text-3xl',    // Tamanho grande
   };
 
   return (
-    // Link que direciona para a página inicial, com a classe CSS do tamanho do logo aplicada
-    <Link to="/" className={`flex items-center font-heading ${classesDeTamanhoLogo[tamanhoLogo] || classesDeTamanhoLogo.default}`}>
+    // O logo inteiro é clicável e leva o usuário para a página inicial
+    <Link 
+      to="/" 
+      className={`
+        flex items-center font-heading 
+        ${classesDeTamanhoLogo[tamanhoLogo] || classesDeTamanhoLogo.default} 
+      `}
+    >
       
-      {/* Ícone do logo: Um círculo com fundo colorido e um ícone SVG */}
+      {/* Área da imagem da logo */}
       <div className="flex items-center justify-center w-15 h-15 mr-2">
-        {/* Substitui o SVG por uma imagem */}
         <img 
-          src="/public/2.png"  // Caminho para o seu arquivo de logo
+          src="/2.png"  // Caminho da imagem (React serve da pasta /public automaticamente)
           alt="Logo" 
-          className="w-14 h-14 object-contain rounded-xl" 
-          // Texto alternativo para acessibilidade
+          className="w-14 h-14 object-contain rounded-xl" // Redonda, contida e com tamanho fixo
         />
       </div>
 
-
-      {/* Nome da empresa exibido ao lado do ícone */}
-      <span className="font-bold text-primary-500">Independent Value</span>
+      {/* Nome da empresa ao lado da logo */}
+      <span className="font-bold text-primary-500">
+        Independent Value
+      </span>
     </Link>
   );
 };
 
+// Exporta o componente para ser usado onde quiser na aplicação (navbar, footer, etc)
 export default Logo;

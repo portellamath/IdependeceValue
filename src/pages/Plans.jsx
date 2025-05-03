@@ -1,10 +1,13 @@
-import { FiArrowRight } from 'react-icons/fi' // Importando o ícone de seta para a direita
-import { Link } from 'react-router-dom' // Importando o Link para navegação entre páginas
-import SectionHeading from '../components/SectionHeading' // Importando o componente de título de seção
-import PlanCard from '../components/PlanCard' // Importando o componente que exibe os planos de serviço
+// Importando ícones e componentes necessários
+import { FiArrowRight } from 'react-icons/fi' // Ícone de seta para links
+import { Link } from 'react-router-dom' // Link para navegação entre páginas
+import SectionHeading from '../components/SectionHeading' // Componente de título de seção
+import PlanCard from '../components/PlanCard' // Componente para exibir cada plano
 
+// Componente principal da página de planos
 const Plans = () => {
-  // Array de planos oferecidos
+
+  // Lista com os planos oferecidos pela empresa
   const plans = [
     {
       title: 'Plano Gratuito',
@@ -34,7 +37,7 @@ const Plans = () => {
         'Dicas e orientações fiscais para MEI/autônomos',
         'Acesso a workshops exclusivos'
       ],
-      isPopular: true
+      isPopular: true // Este plano recebe destaque (ex: com selo "Popular")
     },
     {
       title: 'Plano Premium',
@@ -55,7 +58,7 @@ const Plans = () => {
     }
   ]
 
-  // Array de serviços personalizados oferecidos
+  // Lista com serviços personalizados, além dos planos
   const customPlans = [
     {
       title: 'Planejamento Financeiro',
@@ -81,36 +84,29 @@ const Plans = () => {
 
   return (
     <>
-      {/* Seção de Cabeçalho */}
+      {/* Cabeçalho com título e descrição da página */}
       <section className="bg-primary-500 text-white py-24">
         <div className="container text-center">
-          <h1 
-            className="text-4xl md:text-5xl font-bold mb-6"
-            data-aos="fade-up" // Efeito de animação ao aparecer
-          >
+          <h1 className="text-4xl md:text-5xl font-bold mb-6" data-aos="fade-up">
             Planos de Gestão Financeira
           </h1>
-          <p 
-            className="text-xl text-gray-200 max-w-3xl mx-auto"
-            data-aos="fade-up"
-            data-aos-delay="100" // Animação com atraso
-          >
+          <p className="text-xl text-gray-200 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
             Escolha o plano ideal para organizar suas finanças, aumentar seus lucros e transformar o futuro do seu negócio como MEI ou autônomo.
           </p>
         </div>
       </section>
 
-      {/* Seção de Planos */}
+      {/* Seção que lista os planos disponíveis */}
       <section className="section bg-gray-50">
         <div className="container">
           <SectionHeading 
             title="Nossos Planos de Serviço"
             subtitle="Escolha o plano ideal para organizar suas finanças, aumentar seus lucros e transformar o futuro do seu negócio como MEI ou autônomo.."
-            centered={true} // Centraliza o título e subtítulo
+            centered={true}
           />
           
+          {/* Grid que exibe cada plano */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Mapeando os planos e renderizando o componente PlanCard */}
             {plans.map((plan, index) => (
               <PlanCard 
                 key={index}
@@ -120,20 +116,16 @@ const Plans = () => {
                 description={plan.description}
                 features={plan.features}
                 isPopular={plan.isPopular}
-                delayIndex={index} // Passando o índice para animação
+                delayIndex={index} // Para controlar animações
               />
             ))}
           </div>
-          
-          <div 
-            className="mt-12 text-center"
-            data-aos="fade-up"
-            data-aos-delay="300" // Animação com atraso
-          >
+
+          {/* CTA para quem ainda está em dúvida */}
+          <div className="mt-12 text-center" data-aos="fade-up" data-aos-delay="300">
             <p className="text-gray-600 mb-6">
               Não tem certeza de qual plano é o ideal para você? Entre em contato para uma recomendação personalizada.
             </p>
-            {/* Link para a página de contato */}
             <Link to="/contact" className="btn btn-primary">
               Obter Recomendação Personalizada
             </Link>
@@ -141,7 +133,7 @@ const Plans = () => {
         </div>
       </section>
 
-      {/* Seção de Serviços Personalizados */}
+      {/* Seção com serviços personalizados adicionais */}
       <section className="section">
         <div className="container">
           <SectionHeading 
@@ -151,17 +143,15 @@ const Plans = () => {
           />
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Mapeando os serviços personalizados */}
             {customPlans.map((plan, index) => (
               <div 
                 key={index} 
                 className="bg-white p-6 rounded-lg shadow-card hover:shadow-card-hover transition-all duration-300"
                 data-aos="fade-up"
-                data-aos-delay={index * 100} // Animação com atraso variável
+                data-aos-delay={index * 100}
               >
                 <h3 className="text-xl font-semibold text-primary-500 mb-3">{plan.title}</h3>
                 <p className="text-gray-600 mb-4">{plan.description}</p>
-                {/* Link para página de contato */}
                 <Link 
                   to={plan.link} 
                   className="inline-flex items-center text-secondary-500 hover:text-secondary-600 font-medium"
@@ -174,7 +164,7 @@ const Plans = () => {
         </div>
       </section>
 
-      {/* Seção de Perguntas Frequentes */}
+      {/* Seção de perguntas frequentes */}
       <section className="section bg-gray-50">
         <div className="container">
           <SectionHeading 
@@ -183,55 +173,40 @@ const Plans = () => {
             centered={true}
           />
           
+          {/* Cada pergunta com resposta */}
           <div className="max-w-3xl mx-auto">
-            {/* Cada pergunta frequente */}
-            <div 
-              className="mb-6"
-              data-aos="fade-up"
-            >
+            <div className="mb-6" data-aos="fade-up">
               <h3 className="text-xl font-semibold text-primary-500 mb-3">Como saber qual plano é ideal para mim?</h3>
               <p className="text-gray-600">
-              O plano ideal depende do seu faturamento, dos seus objetivos e da complexidade da sua atividade. O Plano Essencial é ótimo para quem está começando, enquanto o Premium e o Corporativo são mais completos para quem quer crescer ou já tem uma estrutura maior.
+                O plano ideal depende do seu faturamento, dos seus objetivos e da complexidade da sua atividade. O Plano Essencial é ótimo para quem está começando, enquanto o Premium e o Corporativo são mais completos para quem quer crescer ou já tem uma estrutura maior.
               </p>
             </div>
-            
-            {/* Outras perguntas frequentes */}
-            <div 
-              className="mb-6"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
+
+            <div className="mb-6" data-aos="fade-up" data-aos-delay="100">
               <h3 className="text-xl font-semibold text-primary-500 mb-3">Posso atualizar ou reduzir meu plano depois?</h3>
               <p className="text-gray-600">
-              Sim! Você pode mudar de plano a qualquer momento. Sabemos que o seu negócio evolui, e nossos serviços acompanham essa mudança.
+                Sim! Você pode mudar de plano a qualquer momento. Sabemos que o seu negócio evolui, e nossos serviços acompanham essa mudança.
               </p>
             </div>
-            
-            <div 
-              className="mb-6"
-              data-aos="fade-up"
-              data-aos-delay="200"
-            >
+
+            <div className="mb-6" data-aos="fade-up" data-aos-delay="200">
               <h3 className="text-xl font-semibold text-primary-500 mb-3">É necessário um compromisso de longo prazo?</h3>
               <p className="text-gray-600">
-              Não. Nossos planos são cobrados mensalmente, e você pode cancelar quando quiser. Mas, claro, resultados financeiros sólidos surgem com acompanhamento contínuo.
+                Não. Nossos planos são cobrados mensalmente, e você pode cancelar quando quiser. Mas, claro, resultados financeiros sólidos surgem com acompanhamento contínuo.
               </p>
             </div>
-            
-            <div 
-              data-aos="fade-up"
-              data-aos-delay="300"
-            >
+
+            <div data-aos="fade-up" data-aos-delay="300">
               <h3 className="text-xl font-semibold text-primary-500 mb-3">Vocês oferecem planos personalizados?</h3>
               <p className="text-gray-600">
-              Sim! Criamos planos sob medida para a sua realidade como MEI ou autônomo. Fale com nossa equipe e vamos montar a solução ideal para você.
+                Sim! Criamos planos sob medida para a sua realidade como MEI ou autônomo. Fale com nossa equipe e vamos montar a solução ideal para você.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Seção de CTA (Chamada para Ação) */}
+      {/* Seção final com chamada para ação (CTA) */}
       <section className="section bg-primary-500 text-white">
         <div className="container text-center">
           <div data-aos="fade-up" className="max-w-3xl mx-auto">
@@ -239,8 +214,9 @@ const Plans = () => {
               Pronto para Começar?
             </h2>
             <p className="text-lg text-gray-200 mb-8">
-            Dê o primeiro passo para organizar suas finanças e crescer com segurança com a Independent Value.
+              Dê o primeiro passo para organizar suas finanças e crescer com segurança com a Independent Value.
             </p>
+            {/* Botões de ação */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/contact" className="btn bg-secondary-500 hover:bg-secondary-600 text-white">
                 Contate-nos Hoje

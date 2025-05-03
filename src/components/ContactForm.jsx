@@ -1,8 +1,9 @@
-// Importa o hook useState do React para gerenciar estados locais
+// Importa o hook useState do React para armazenar e controlar valores no componente
 import { useState } from 'react'
 
+// Componente de Formulário de Contato
 const ContactForm = () => {
-  // Estado para armazenar os dados do formulário
+  // Armazena os valores dos campos do formulário
   const [formData, setFormData] = useState({
     nome: '',
     email: '',
@@ -10,35 +11,36 @@ const ContactForm = () => {
     mensagem: '',
   })
 
-  // Estado para controlar o envio do formulário
+  // Indica se o formulário está sendo enviado no momento
   const [isSubmitting, setIsSubmitting] = useState(false)
 
-  // Estado que indica se o formulário foi enviado com sucesso
+  // Indica se o formulário já foi enviado com sucesso
   const [submitted, setSubmitted] = useState(false)
 
-  // Estado para mensagens de erro
+  // Armazena mensagens de erro (caso algo dê errado no envio)
   const [error, setError] = useState(null)
 
-  // Função para atualizar os dados do formulário conforme o usuário digita
+  // Função chamada sempre que o usuário digita algo em um campo
   const handleChange = (e) => {
     const { name, value } = e.target
+    // Atualiza o campo correspondente no estado formData
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
     }))
   }
 
-  // Função executada ao submeter o formulário
+  // Função chamada quando o usuário envia o formulário
   const handleSubmit = async (e) => {
-    e.preventDefault() // Impede o recarregamento da página
-    setIsSubmitting(true) // Indica que o envio está em andamento
-    setError(null) // Limpa erros anteriores
+    e.preventDefault() // Evita que a página recarregue ao enviar
+    setIsSubmitting(true) // Mostra que o envio está em andamento
+    setError(null) // Limpa qualquer erro anterior
 
     try {
-      // Simula uma chamada assíncrona (como uma requisição para backend)
+      // Simula um envio (ex: API ou servidor)
       await new Promise(resolve => setTimeout(resolve, 1500))
 
-      // Marca como enviado com sucesso e limpa os campos
+      // Marca como enviado e limpa o formulário
       setSubmitted(true)
       setFormData({
         nome: '',
@@ -47,19 +49,20 @@ const ContactForm = () => {
         mensagem: '',
       })
     } catch (err) {
-      // Se ocorrer erro, exibe mensagem de erro
+      // Se algo falhar, mostra uma mensagem de erro
       setError("Ocorreu um erro ao enviar o formulário. Por favor, tente novamente.")
     } finally {
-      // Finaliza o estado de envio
+      // Independente do resultado, para a animação de envio
       setIsSubmitting(false)
     }
   }
 
-  // Se o formulário foi enviado com sucesso, exibe mensagem de confirmação
+  // Se já foi enviado com sucesso, mostra a mensagem de confirmação
   if (submitted) {
     return (
       <div className="bg-secondary-50 p-6 rounded-lg text-center" data-aos="fade-up">
-        {/* Ícone de check (confirmação) */}
+        
+        {/* Ícone de checkmark animado */}
         <svg 
           className="w-16 h-16 text-secondary-500 mx-auto mb-4" 
           fill="none" 
@@ -74,12 +77,16 @@ const ContactForm = () => {
             d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
           />
         </svg>
-        {/* Mensagem de agradecimento */}
+
+        {/* Título de agradecimento */}
         <h3 className="text-2xl font-bold text-primary-500 mb-2">Obrigado!</h3>
+
+        {/* Texto explicando que entrarão em contato */}
         <p className="text-gray-600 mb-4">
           Sua mensagem foi recebida. Entraremos em contato em breve.
         </p>
-        {/* Botão para permitir novo envio */}
+
+        {/* Botão para enviar outra mensagem */}
         <button 
           onClick={() => setSubmitted(false)} 
           className="btn btn-primary"
@@ -90,10 +97,11 @@ const ContactForm = () => {
     )
   }
 
-  // Formulário padrão, exibido quando ainda não foi enviado
+  // Se ainda não enviou, mostra o formulário
   return (
     <form onSubmit={handleSubmit} data-aos="fade-up">
-      {/* Exibe erro se houver */}
+
+      {/* Se tiver erro, exibe um alerta vermelho */}
       {error && (
         <div className="mb-6 p-4 bg-red-50 text-red-500 rounded-lg">
           {error}
@@ -167,15 +175,15 @@ const ContactForm = () => {
         />
       </div>
       
-      {/* Botão de envio com indicador de carregamento */}
+      {/* Botão de Enviar */}
       <button
         type="submit"
-        disabled={isSubmitting}
+        disabled={isSubmitting} // Desativa enquanto está enviando
         className="w-full btn btn-primary"
       >
         {isSubmitting ? (
+          // Enquanto está enviando, mostra o ícone animado e texto "Enviando..."
           <span className="flex items-center justify-center">
-            {/* Ícone animado de carregamento */}
             <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
               <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
               <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
@@ -183,6 +191,7 @@ const ContactForm = () => {
             Enviando...
           </span>
         ) : (
+          // Se não está enviando, mostra "Enviar Mensagem"
           'Enviar Mensagem'
         )}
       </button>
@@ -190,5 +199,5 @@ const ContactForm = () => {
   )
 }
 
-// Exporta o componente para ser usado em outras partes da aplicação
+// Exporta o formulário para poder usar em outras páginas
 export default ContactForm
