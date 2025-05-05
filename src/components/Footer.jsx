@@ -1,32 +1,31 @@
-// Importações necessárias
-import { Link } from 'react-router-dom' // Para navegação interna sem recarregar a página
-import { FiFacebook, FiTwitter, FiLinkedin, FiInstagram } from 'react-icons/fi' // Ícones das redes sociais
-import Logo from './Logo' // Componente do logotipo da empresa
+// Importando Link para navegação interna com React Router
+import { Link } from 'react-router-dom'
 
-// Componente funcional que representa o rodapé do site
+// Importando ícones das redes sociais da biblioteca react-icons
+import { FiFacebook, FiTwitter, FiLinkedin, FiInstagram } from 'react-icons/fi'
+
+// Importando o logo da empresa
+import Logo from './Logo'
+
+// Componente que renderiza o rodapé do site
 const Footer = () => {
-  // Pega o ano atual dinamicamente para mostrar no copyright
+  // Pega o ano atual para exibir no copyright
   const year = new Date().getFullYear()
 
   return (
     <footer className="bg-gray-900 text-white pt-16 pb-8">
-      {/* Container central que limita a largura do conteúdo */}
       <div className="container">
-
-        {/* Grid com até 4 colunas em telas grandes, mas responsivo para telas menores */}
+        {/* Grid com 4 colunas no desktop, 2 no tablet e 1 no mobile */}
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4 mb-12">
-
-          {/* Coluna 1: Logo, descrição da empresa e redes sociais */}
+          
+          {/* Primeira coluna: Logo + descrição + redes sociais */}
           <div className="space-y-4">
-            {/* Logotipo grande */}
-            <Logo size="large" />
-
-            {/* Breve descrição da missão da empresa */}
+            <Logo size="large" /> {/* Exibe o logo */}
             <p className="text-gray-400 mt-4">
-              Transformando o futuro financeiro de autônomos e MEIs com soluções simples, acessíveis e eficazes.
+            Transformando o futuro financeiro de autônomos e MEIs com soluções simples, acessíveis e eficazes.
             </p>
-
-            {/* Ícones clicáveis das redes sociais */}
+            
+            {/* Ícones das redes sociais */}
             <div className="flex space-x-4 pt-2">
               <a href="https://facebook.com" target="_blank" rel="noopener" className="text-gray-400 hover:text-secondary-500 transition-colors">
                 <FiFacebook size={20} />
@@ -43,7 +42,7 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Coluna 2: Navegação rápida do site */}
+          {/* Segunda coluna: Links rápidos do site */}
           <div>
             <h3 className="text-xl font-semibold mb-6">Links Rápidos</h3>
             <ul className="space-y-3">
@@ -53,73 +52,72 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/plans" className="text-gray-400 hover:text-secondary-500 transition-colors">
+                <Link to="/planos" className="text-gray-400 hover:text-secondary-500 transition-colors">
                   Planos
                 </Link>
               </li>
               <li>
-                <Link to="/solutions" className="text-gray-400 hover:text-secondary-500 transition-colors">
+                <Link to="/solucoes" className="text-gray-400 hover:text-secondary-500 transition-colors">
                   Soluções
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="text-gray-400 hover:text-secondary-500 transition-colors">
+                <Link to="/contato" className="text-gray-400 hover:text-secondary-500 transition-colors">
                   Contato
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Coluna 3: Lista de serviços/soluções que a empresa oferece */}
+          {/* Terceira coluna: Lista de soluções oferecidas */}
           <div>
             <h3 className="text-xl font-semibold mb-6">Soluções</h3>
             <ul className="space-y-3">
               <li>
-                <Link to="/solutions" className="text-gray-400 hover:text-secondary-500 transition-colors">
+                <Link to="/solucoes" className="text-gray-400 hover:text-secondary-500 transition-colors">
                   Planejamento Financeiro
                 </Link>
               </li>
               <li>
-                <Link to="/solutions" className="text-gray-400 hover:text-secondary-500 transition-colors">
-                  Organização de Fluxo de Caixa
+                <Link to="/solucoes" className="text-gray-400 hover:text-secondary-500 transition-colors">
+                  Gestão de Investimentos
                 </Link>
               </li>
               <li>
-                <Link to="/solutions" className="text-gray-400 hover:text-secondary-500 transition-colors">
+                <Link to="/solucoes" className="text-gray-400 hover:text-secondary-500 transition-colors">
                   Análise de Custos
                 </Link>
               </li>
               <li>
-                <Link to="/solutions" className="text-gray-400 hover:text-secondary-500 transition-colors">
+                <Link to="/solucoes" className="text-gray-400 hover:text-secondary-500 transition-colors">
                   Consultoria Personalizada
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Coluna 4: Informações de contato da empresa */}
+          {/* Quarta coluna: Informações de contato */}
           <div>
             <h3 className="text-xl font-semibold mb-6">Contato</h3>
             <ul className="space-y-3">
+              {/* Endereço */}
               <li className="text-gray-400">
-                Av. Tiradentes, 1211<br />
-                Itu, SP 13309-640
+                Rua das Finanças, 200<br />
+                São Paulo, SP 01001-000
               </li>
+              {/* Telefone com link para ligação no celular */}
               <li className="text-gray-400">
-                <a href="tel:+5511999999999" className="hover:text-secondary-500 transition-colors">
-                  +55 (19) 99948-1590
-                </a>
+                <a href="tel:+551199999999" className="hover:text-secondary-500 transition-colors">+55 (11) 9999-9999</a>
               </li>
+              {/* Email com link para abrir no app de email */}
               <li className="text-gray-400">
-                <a href="mailto:info@ivvalue.com" className="hover:text-secondary-500 transition-colors">
-                  info@ivvalue.com
-                </a>
+                <a href="mailto:contato@ivvalue.com.br" className="hover:text-secondary-500 transition-colors">contato@ivvalue.com.br</a>
               </li>
             </ul>
           </div>
         </div>
 
-        {/* Barra inferior com ano atual e direitos autorais */}
+        {/* Linha inferior com copyright */}
         <div className="pt-8 border-t border-gray-800 text-center text-sm text-gray-500">
           <p>© {year} IV Value Gestão Financeira. Todos os direitos reservados.</p>
         </div>
@@ -128,5 +126,5 @@ const Footer = () => {
   )
 }
 
-// Exporta o componente para ser reutilizado em outras páginas
+// Exporta o componente para ser usado na página principal ou layout
 export default Footer

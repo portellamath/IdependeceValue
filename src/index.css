@@ -1,79 +1,61 @@
-/* Importa as camadas do Tailwind CSS */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Configurações globais de fonte e suavização para melhorar a legibilidade */
 :root {
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  scroll-behavior: smooth; /* Faz o scroll ser suave ao clicar em âncoras */
+  scroll-behavior: smooth;
 }
 
-/* Estilos globais para o body */
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Open Sans', sans-serif; /* Fonte padrão para textos */
-  @apply bg-gray-50; /* Aplica fundo cinza clarinho com Tailwind */
+  font-family: 'Open Sans', sans-serif;
+  @apply bg-gray-50;
 }
 
-/* Estilização dos títulos (h1, h2, h3...) */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Poppins', sans-serif; /* Usa uma fonte mais moderna para títulos */
-  @apply font-heading font-semibold leading-tight; /* Deixa os títulos bem definidos e compactos */
+  font-family: 'Poppins', sans-serif;
+  @apply font-heading font-semibold leading-tight;
 }
 
-/* Estilização padrão dos parágrafos */
 p {
-  @apply font-body leading-relaxed; /* Deixa o texto confortável para leitura */
+  @apply font-body leading-relaxed;
 }
 
-/* Classe utilitária para containers */
 .container {
-  @apply px-4 mx-auto max-w-7xl; /* Centraliza e limita a largura, com padding lateral */
+  @apply px-4 mx-auto max-w-7xl;
 }
 
-/* Estilização base dos botões */
 .btn {
   @apply inline-flex items-center justify-center px-6 py-3 font-medium transition duration-300 rounded-md focus:outline-none;
-  /* Alinha conteúdo, define padding, animação de hover e bordas arredondadas */
 }
 
-/* Botão com fundo colorido (primário) */
 .btn-primary {
   @apply text-white bg-secondary-500 hover:bg-secondary-600 focus:ring-2 focus:ring-secondary-300;
-  /* Fica branco com fundo colorido, escurece no hover e tem anel de foco */
 }
 
-/* Botão com borda (outline) */
 .btn-outline {
   @apply text-primary-500 bg-transparent border border-primary-500 hover:bg-primary-500 hover:text-white focus:ring-2 focus:ring-primary-300;
-  /* Borda colorida, fundo transparente e troca de cor ao passar o mouse */
 }
 
-/* Estilo para links do menu de navegação */
 .nav-link {
-  @apply relative font-medium text-gray-700 transition-colors hover:text-primary-500 
-         before:absolute before:bottom-0 before:left-0 before:w-0 before:h-0.5 before:bg-secondary-500 before:transition-all before:duration-300 hover:before:w-full;
-  /* Link com efeito underline animado ao passar o mouse */
+  @apply relative font-medium text-gray-700 transition-colors hover:text-primary-500 before:absolute before:bottom-0 before:left-0 before:w-0 before:h-0.5 before:bg-secondary-500 before:transition-all before:duration-300 hover:before:w-full;
 }
 
-/* Quando o link está ativo (página atual) */
 .nav-link.active {
-  @apply text-primary-500 before:w-full; /* Mantém o underline e muda a cor */
+  @apply text-primary-500 before:w-full;
 }
 
-/* Seções da página com espaçamento vertical */
 .section {
-  @apply py-16 md:py-24; /* Padding vertical maior em telas grandes */
+  @apply py-16 md:py-24;
 }
 
-/* Estilização do mapa (Leaflet) para funcionar corretamente */
 .leaflet-container {
   width: 100%;
   height: 400px;
-  z-index: 10; /* Garante que o mapa fique acima de outros elementos */
+  z-index: 10;
 }

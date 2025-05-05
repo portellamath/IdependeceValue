@@ -1,52 +1,42 @@
-/* Estiliza a área principal da página (root) */
 #root {
-  max-width: 1280px; /* Limita a largura máxima para não ficar gigante em telas grandes */
-  margin: 0 auto;    /* Centraliza no meio da tela */
-  padding: 2rem;     /* Dá um respiro nas bordas internas */
-  text-align: center; /* Centraliza o texto por padrão */
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
 }
 
-/* Estiliza o logo */
 .logo {
-  height: 6em; /* Define uma altura fixa para o logo */
-  padding: 1.5em; /* Espaço ao redor do logo para ele "respirar" */
-  will-change: filter; /* Dica pro navegador otimizar a performance quando o filtro mudar */
-  transition: filter 300ms; /* Suaviza a mudança quando passa o mouse (hover) */
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
 }
-
-/* Quando passar o mouse sobre qualquer logo */
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa); /* Efeito de brilho azul quando o logo é destacado */
+  filter: drop-shadow(0 0 2em #646cffaa);
 }
-
-/* Quando passar o mouse sobre o logo com classe 'react' */
 .logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa); /* Um brilho especial no tom do React */
+  filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-/* Define uma animação de rotação chamada 'logo-spin' */
 @keyframes logo-spin {
   from {
-    transform: rotate(0deg); /* Começa sem rotação */
+    transform: rotate(0deg);
   }
   to {
-    transform: rotate(360deg); /* Gira 360 graus */
+    transform: rotate(360deg);
   }
 }
 
-/* Aplica a animação de rotação só se o usuário não prefere menos movimento */
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear; /* Gira infinitamente, uma volta a cada 20 segundos */
+    animation: logo-spin infinite 20s linear;
   }
 }
 
-/* Estilo para cartões ou blocos de conteúdo */
 .card {
-  padding: 2em; /* Espaço interno confortável */
+  padding: 2em;
 }
 
-/* Estilo para textos secundários ou instruções */
 .read-the-docs {
-  color: #888; /* Um cinza mais suave, não chama tanto a atenção */
+  color: #888;
 }

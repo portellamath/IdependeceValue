@@ -1,97 +1,95 @@
-// Importa hooks do React e ferramentas de navegação do React Router, além dos ícones para o menu
+// Hooks do React para estado e efeito colateral
 import { useState, useEffect } from 'react'
+// Componentes de navegação do React Router
 import { NavLink, Link } from 'react-router-dom'
-import { FiMenu, FiX } from 'react-icons/fi' // Ícones de menu (hamburguer) e fechar (X)
-import Logo from './Logo' // Componente que exibe a logo da empresa
+// Ícones do react-icons (menu e fechar)
+import { FiMenu, FiX } from 'react-icons/fi'
+// Nosso componente de logo personalizado
+import Logo from './Logo'
 
-// Componente da barra de navegação do site
+// Componente Navbar
 const Navbar = () => {
-  // Estado que controla se o menu mobile está aberto ou fechado
+  // Estado que controla se o menu mobile está aberto ou não
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-
-  // Estado que verifica se a página foi rolada para baixo (usado para mudar a cor da navbar)
+  // Estado que controla se a navbar está "rolada" (para mudar estilo)
   const [isScrolled, setIsScrolled] = useState(false)
 
-  // Função para abrir/fechar o menu mobile
+  // Função que alterna o menu mobile
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
   }
 
-  // Hook para monitorar quando o usuário rola a página
+  // Efeito que ouve o scroll da página para aplicar fundo branco e sombra
   useEffect(() => {
     const handleScroll = () => {
-      // Se rolou mais de 50px, ativa a navbar com fundo branco e sombra
       if (window.scrollY > 50) {
-        setIsScrolled(true)
+        setIsScrolled(true)  // Ativa estilo rolado
       } else {
-        setIsScrolled(false)
+        setIsScrolled(false) // Volta ao estilo original
       }
     }
 
-    window.addEventListener('scroll', handleScroll) // Ativa o evento
-    return () => window.removeEventListener('scroll', handleScroll) // Limpa o evento ao desmontar
-  }, []) // Só executa uma vez quando o componente carrega
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
-  // Links do menu (usado tanto no desktop quanto no mobile)
+  // Links de navegação (fácil de manter e escalar)
   const navLinks = [
     { name: 'Início', path: '/' },
-    { name: 'Planos', path: '/plans' },
-    { name: 'Soluções', path: '/solutions' },
-    { name: 'Contato', path: '/contact' },
+    { name: 'Planos', path: '/planos' },
+    { name: 'Soluções', path: '/solucoes' },
+    { name: 'Contato', path: '/contato' },
   ]
 
   return (
-    // Cabeçalho da página, que fica fixo no topo e muda de cor ao rolar
     <header 
+      // Navbar fixa no topo com efeito de transição suave ao rolar
       className={`sticky top-0 z-50 w-full transition-all duration-300 ${
         isScrolled ? 'bg-white shadow-md py-3' : 'bg-transparent py-5'
       }`}
     >
-      {/* Container que alinha logo, menu e botão */}
       <div className="container flex items-center justify-between">
-        {/* Logo com link para a home */}
+
+        {/* Logo clicável que leva para Home */}
         <Link to="/" className="flex items-center">
           <Logo />
         </Link>
 
-        {/* Menu de navegação que só aparece em telas grandes (desktop) */}
+        {/* Navegação para telas grandes (desktop) */}
         <nav className="hidden md:flex items-center space-x-8">
-          {/* Gera os links do menu de forma automática */}
           {navLinks.map((link) => (
             <NavLink
-              key={link.path} // Chave única para cada link
-              to={link.path} // Destino da rota
+              key={link.path}
+              to={link.path}
               className={({ isActive }) => 
-                isActive ? 'nav-link active' : 'nav-link' // Aplica classe "ativa" se a rota estiver ativa
+                isActive ? 'nav-link active' : 'nav-link'
               }
-              end // Garante que o link "/" só ativa na raiz
+              end
             >
               {link.name}
             </NavLink>
           ))}
 
-          {/* Botão "Comece Agora" que leva para o contato */}
-          <Link to="/contact" className="btn btn-primary">
+          {/* Botão call-to-action */}
+          <Link to="/login" className="btn btn-primary">
             Comece Agora
           </Link>
         </nav>
 
-        {/* Botão hamburguer (menu mobile) */}
+        {/* Botão do menu mobile (hambúrguer/fechar) */}
         <button
-          className="p-2 md:hidden text-primary-500" // Só aparece em telas pequenas (md:hidden)
+          className="p-2 md:hidden text-primary-500"
           onClick={toggleMenu}
           aria-label="Alternar menu"
         >
-          {/* Ícone que muda de acordo com o estado do menu */}
           {isMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
         </button>
       </div>
 
-      {/* Menu Mobile (só aparece quando isMenuOpen for true) */}
+      {/* Menu Mobile que aparece ao clicar no hambúrguer */}
       {isMenuOpen && (
         <div className="fixed inset-0 z-40 flex flex-col w-full h-screen bg-white md:hidden animate-fade-in pt-20">
           <div className="container flex flex-col space-y-4 mt-4">
-            {/* Links do menu mobile */}
             {navLinks.map((link) => (
               <NavLink
                 key={link.path}
@@ -101,18 +99,18 @@ const Navbar = () => {
                     isActive ? 'text-primary-500' : 'text-gray-700'
                   }`
                 }
-                onClick={() => setIsMenuOpen(false)} // Fecha o menu ao clicar
+                onClick={() => setIsMenuOpen(false)}  // Fecha menu após clique
                 end
               >
                 {link.name}
               </NavLink>
             ))}
 
-            {/* Botão "Comece Agora" no menu mobile */}
+            {/* Botão call-to-action dentro do menu mobile */}
             <Link
-              to="/contact"
-              className="btn btn-primary w-full mt-6 text-center"
-              onClick={() => setIsMenuOpen(false)} // Fecha o menu ao clicar
+              to="/login"
+              className="btn btn-primary w-full text-center"
+              onClick={() => setIsMenuOpen(false)}  // Fecha menu ao clicar
             >
               Comece Agora
             </Link>
@@ -123,5 +121,4 @@ const Navbar = () => {
   )
 }
 
-// Exporta o componente para ser usado em outras páginas
 export default Navbar

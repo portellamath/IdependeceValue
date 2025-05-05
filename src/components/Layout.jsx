@@ -1,42 +1,36 @@
-// Importa ferramentas do React Router e React
-import { Outlet, useLocation } from 'react-router-dom' // Outlet = onde as rotas filhas aparecem
+// Importa o Outlet (para renderizar rotas filhas) e useLocation (para detectar mudanças de rota)
+import { Outlet, useLocation } from 'react-router-dom'
+// Importa o hook useEffect do React
 import { useEffect } from 'react'
+// Importa a Navbar e o Footer do projeto
+import Navbar from './Navbar'
+import Footer from './Footer'
 
-// Importa componentes fixos da interface
-import Navbar from './Navbar'  // Topo do site (menu de navegação)
-import Footer from './Footer'  // Final do site (rodapé com informações)
-
-// Componente Layout: estrutura base que envolve todas as páginas
+// Componente Layout — estrutura base que todas as páginas usam
 const Layout = () => {
-  // Hook do React Router que retorna o caminho atual da URL
+  // Pega o caminho atual da URL (ex: "/solucoes", "/planos", etc.)
   const { pathname } = useLocation()
 
-  // Sempre que a rota (pathname) mudar, rola automaticamente para o topo da página
+  // Sempre que a rota mudar, dá scroll para o topo da página
   useEffect(() => {
     window.scrollTo(0, 0)
-  }, [pathname]) // Esse efeito roda toda vez que o "pathname" mudar
+  }, [pathname])
 
   return (
-    // Estrutura base da aplicação:
-    // - flex-col: organiza os elementos em coluna (vertical)
-    // - min-h-screen: garante que a altura mínima seja o tamanho da tela (100vh)
     <div className="flex flex-col min-h-screen">
-      
-      {/* Navbar: sempre fixa no topo da aplicação */}
+      {/* Sempre mostra a Navbar no topo */}
       <Navbar />
 
-      {/* Conteúdo principal da página:
-          - flex-grow: faz com que essa área cresça para ocupar o espaço entre o topo e o rodapé
-          - Outlet: ponto onde a rota filha será injetada dinamicamente */}
+      {/* Área principal da página */}
       <main className="flex-grow">
+        {/* Aqui dentro é onde as rotas filhas vão ser renderizadas */}
         <Outlet />
       </main>
 
-      {/* Rodapé: sempre aparece no final da página */}
+      {/* Sempre mostra o Footer no final */}
       <Footer />
     </div>
   )
 }
 
-// Exporta o Layout para que ele possa ser usado no sistema de rotas da aplicação
 export default Layout
