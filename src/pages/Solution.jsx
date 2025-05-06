@@ -1,3 +1,4 @@
+// Importando ícones do pacote react-icons/fi (Feather Icons estilizados)
 import { 
   FiPieChart, 
   FiTrendingUp, 
@@ -8,10 +9,14 @@ import {
   FiFileText, 
   FiBriefcase 
 } from 'react-icons/fi'
+
+// Componentes reutilizáveis do projeto
 import SectionHeading from '../components/SectionHeading'
 import SolutionCard from '../components/SolutionCard'
 
+// Componente principal da página de Soluções
 const Solution = () => {
+  // Lista de soluções oferecidas pela empresa
   const solutions = [
     {
       icon: <FiPieChart size={24} />,
@@ -55,6 +60,7 @@ const Solution = () => {
     }  
   ]
 
+  // Passos do processo de atendimento ao cliente
   const processSteps = [
     {
       number: '01',
@@ -85,26 +91,19 @@ const Solution = () => {
 
   return (
     <>
-      {/* Header Section */}
+      {/* Seção de Abertura com destaque */}
       <section className="bg-primary-500 text-white py-24">
         <div className="container text-center">
-          <h1 
-            className="text-4xl md:text-5xl font-bold mb-6"
-            data-aos="fade-up"
-          >
+          <h1 className="text-4xl md:text-5xl font-bold mb-6" data-aos="fade-up">
             Nossas Soluções Financeiras
           </h1>
-          <p 
-            className="text-xl text-gray-200 max-w-3xl mx-auto"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
+          <p className="text-xl text-gray-200 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
             Soluções completas para MEIs e Autônomos que querem crescer com segurança e transformar suas finanças.
           </p>
         </div>
       </section>
 
-      {/* Solutions Section */}
+      {/* Seção de Cartões com cada solução */}
       <section className="section bg-gray-50">
         <div className="container">
           <SectionHeading 
@@ -112,7 +111,6 @@ const Solution = () => {
             subtitle="Cuidamos de todos os aspectos da sua vida financeira para que você possa focar no que faz de melhor: tocar o seu negócio."
             centered={true}
           />
-          
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {solutions.map((solution, index) => (
               <SolutionCard 
@@ -127,7 +125,7 @@ const Solution = () => {
         </div>
       </section>
 
-      {/* Process Section */}
+      {/* Seção com etapas do processo de atendimento */}
       <section className="section">
         <div className="container">
           <SectionHeading 
@@ -135,15 +133,9 @@ const Solution = () => {
             subtitle="Nosso processo é simples, personalizado e pensado para a realidade de quem empreende sozinho ou com uma pequena equipe."
             centered={true}
           />
-          
           <div className="max-w-4xl mx-auto">
             {processSteps.map((step, index) => (
-              <div 
-                key={index} 
-                className="flex mb-12 last:mb-0"
-                data-aos="fade-up"
-                data-aos-delay={index * 100}
-              >
+              <div key={index} className="flex mb-12 last:mb-0" data-aos="fade-up" data-aos-delay={index * 100}>
                 <div className="mr-6 relative">
                   <div className="flex items-center justify-center w-14 h-14 bg-primary-500 text-white rounded-full font-bold text-xl">
                     {step.number}
@@ -162,7 +154,7 @@ const Solution = () => {
         </div>
       </section>
 
-      {/* Why Choose Us Section */}
+      {/* Seção explicando os diferenciais da empresa */}
       <section className="section bg-gray-50">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -171,38 +163,28 @@ const Solution = () => {
                 title="Por Que Escolher a Independent Value?"
                 subtitle="Combinamos experiência, personalização e tecnologia de ponta para entregar resultados financeiros superiores."
               />
-              
               <div data-aos="fade-up">
+                {/* Destaques dos diferenciais */}
                 <div className="mb-6">
                   <h3 className="text-xl font-semibold text-primary-500 mb-2">Equipe Especializada</h3>
-                  <p className="text-gray-600">
-                  Consultores experientes que entendem a realidade do pequeno empreendedor brasileiro.
-                  </p>
+                  <p className="text-gray-600">Consultores experientes que entendem a realidade do pequeno empreendedor brasileiro.</p>
                 </div>
-                
                 <div className="mb-6">
                   <h3 className="text-xl font-semibold text-primary-500 mb-2">Soluções Personalizadas</h3>
-                  <p className="text-gray-600">
-                  Cada MEI e autônomo é único. Por isso, criamos planos sob medida para sua realidade.
-                  </p>
+                  <p className="text-gray-600">Cada MEI e autônomo é único. Por isso, criamos planos sob medida para sua realidade.</p>
                 </div>
-                
                 <div className="mb-6">
                   <h3 className="text-xl font-semibold text-primary-500 mb-2">Transparência Total</h3>
-                  <p className="text-gray-600">
-                  Explicamos tudo de forma simples e sem "economês", para que você saiba exatamente o que está acontecendo com suas finanças.
-                  </p>
+                  <p className="text-gray-600">Explicamos tudo de forma simples e sem "economês".</p>
                 </div>
-                
                 <div>
                   <h3 className="text-xl font-semibold text-primary-500 mb-2">Suporte Contínuo</h3>
-                  <p className="text-gray-600">
-                  Você não fica sozinho: nosso time está sempre disponível para ajudar.
-                  </p>
+                  <p className="text-gray-600">Você não fica sozinho: nosso time está sempre disponível para ajudar.</p>
                 </div>
               </div>
             </div>
-            
+
+            {/* Imagem ilustrativa à direita */}
             <div data-aos="fade-left">
               <img 
                 src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" 
@@ -214,7 +196,7 @@ const Solution = () => {
         </div>
       </section>
 
-      {/* Success Stories Section */}
+      {/* Seção com histórias de sucesso de clientes */}
       <section className="section">
         <div className="container">
           <SectionHeading 
@@ -222,50 +204,40 @@ const Solution = () => {
             subtitle="Leia sobre como nossas soluções financeiras ajudaram clientes a alcançar seus objetivos."
             centered={true}
           />
-          
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div 
-              className="bg-white p-6 rounded-lg shadow-card"
-              data-aos="fade-up"
-            >
+            {/* Exemplo 1 */}
+            <div className="bg-white p-6 rounded-lg shadow-card" data-aos="fade-up">
               <h3 className="text-xl font-semibold text-primary-500 mb-3">Estratégia de Crescimento Empresarial</h3>
               <p className="text-gray-600 mb-4">
-              Estava com problemas de fluxo de caixa. Em 18 meses, com nossa estratégia, aumentou o lucro em 22% e expandiu para novos mercados.
+                Estava com problemas de fluxo de caixa. Em 18 meses, com nossa estratégia, aumentou o lucro em 22%.
               </p>
-              <div className="text-sm text-gray-500">
-              Microempresa de Tecnologia
-              </div>
+              <div className="text-sm text-gray-500">Microempresa de Tecnologia</div>
             </div>
-            
-            <div 
-              className="bg-white p-6 rounded-lg shadow-card"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
+
+            {/* Exemplo 2 */}
+            <div className="bg-white p-6 rounded-lg shadow-card" data-aos="fade-up" data-aos-delay="100">
               <h3 className="text-xl font-semibold text-primary-500 mb-3">Planejamento para Aposentadoria</h3>
               <p className="text-gray-600 mb-4">
-              Preocupado com a aposentadoria. Com nosso plano, conseguiram se aposentar 3 anos antes do previsto com tranquilidade financeira.
+                Com nosso plano, conseguiram se aposentar 3 anos antes do previsto com tranquilidade financeira.
               </p>
-              <div className="text-sm text-gray-500">
-              Casal Autônomo
-              </div>
+              <div className="text-sm text-gray-500">Casal Autônomo</div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Seção final de chamada para ação */}
       <section className="section bg-primary-500 text-white">
         <div className="container text-center">
           <div className="max-w-3xl mx-auto" data-aos="fade-up">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Pronto para Transformar Seu Futuro Financeiro?
+              Pronto para Transformar Seu Futuro Financeiro?
             </h2>
             <p className="text-lg text-gray-200 mb-8">
-            Agende uma conversa gratuita com nossos especialistas e descubra como podemos ajudar você a crescer com segurança.
+              Agende uma conversa gratuita com nossos especialistas e descubra como podemos ajudar você a crescer com segurança.
             </p>
-            <a href="/contact" className="btn bg-secondary-500 hover:bg-secondary-600 text-white">
-            Agendar uma Consultoria
+            <a href="/contato" className="btn bg-secondary-500 hover:bg-secondary-600 text-white">
+              Agendar uma Consultoria
             </a>
           </div>
         </div>

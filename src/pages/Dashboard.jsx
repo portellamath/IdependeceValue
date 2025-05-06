@@ -1,6 +1,10 @@
+// Importações essenciais do React
 import { useState, useEffect } from 'react'
+// Hook para navegação entre páginas
 import { useNavigate } from 'react-router-dom'
+// Biblioteca para mostrar notificações no estilo “toast”
 import toast from 'react-hot-toast'
+// Ícones visuais para tornar a interface mais intuitiva
 import {
   FiPlusCircle,
   FiMinusCircle,
@@ -12,29 +16,39 @@ import {
   FiLogOut
 } from 'react-icons/fi'
 
+// Componente principal da tela do usuário logado
 const Dashboard = () => {
   const navigate = useNavigate()
+
+  // Estado do usuário logado
   const [currentUser, setCurrentUser] = useState(null)
+  // Estado que controla a exibição do modal de transação
   const [showTransactionModal, setShowTransactionModal] = useState(false)
+  // Tipo da transação atual (income = receita, expense = despesa)
   const [transactionType, setTransactionType] = useState('')
+  // Lista de transações do usuário
   const [transactions, setTransactions] = useState([])
+  // Dados do formulário da transação
   const [formData, setFormData] = useState({
     amount: '',
     category: '',
     description: '',
-    date: new Date().toISOString().split('T')[0]
+    date: new Date().toISOString().split('T')[0] // Data atual formatada (yyyy-mm-dd)
   })
 
+  // Executa ao carregar o componente (montagem)
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem('currentUser'))
     if (user) {
       setCurrentUser(user)
-      // Load user's transactions
+
+      // Recupera as transações do usuário salvas localmente
       const userTransactions = JSON.parse(localStorage.getItem(`transactions_${user.id}`) || '[]')
       setTransactions(userTransactions)
     }
   }, [])
 
+  // Função para encerrar a sessão do usuário
   const handleLogout = () => {
     localStorage.removeItem('isAuthenticated')
     localStorage.removeItem('currentUser')
@@ -42,21 +56,23 @@ const Dashboard = () => {
     toast.success('Logout realizado com sucesso')
   }
 
+  // Função para enviar uma nova transação (ao submeter o formulário)
   const handleTransactionSubmit = (e) => {
     e.preventDefault()
-    
+
     const newTransaction = {
-      id: Date.now(),
+      id: Date.now(), // ID único baseado no timestamp
       ...formData,
       type: transactionType,
-      amount: parseFloat(formData.amount),
+      amount: parseFloat(formData.amount), // Garante que o valor seja número
       createdAt: new Date().toISOString()
     }
 
     const updatedTransactions = [...transactions, newTransaction]
     setTransactions(updatedTransactions)
     localStorage.setItem(`transactions_${currentUser.id}`, JSON.stringify(updatedTransactions))
-    
+
+    // Fecha o modal e limpa o formulário
     setShowTransactionModal(false)
     setFormData({
       amount: '',
@@ -64,21 +80,22 @@ const Dashboard = () => {
       description: '',
       date: new Date().toISOString().split('T')[0]
     })
-    
+
     toast.success(`${transactionType === 'income' ? 'Receita' : 'Despesa'} registrada com sucesso!`)
   }
 
+  // Calcula o saldo total com base nas transações
   const calculateBalance = () => {
     return transactions.reduce((acc, transaction) => {
-      return transaction.type === 'income' 
-        ? acc + transaction.amount 
+      return transaction.type === 'income'
+        ? acc + transaction.amount
         : acc - transaction.amount
     }, 0)
   }
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Header */}
+      {/* Cabeçalho com título e botão de logout */}
       <header className="bg-primary-500 text-white py-4">
         <div className="container mx-auto px-4 flex justify-between items-center">
           <h1 className="text-2xl font-bold">Dashboard Financeiro</h1>
@@ -91,9 +108,9 @@ const Dashboard = () => {
         </div>
       </header>
 
-      {/* Main Content */}
+      {/* Conteúdo principal */}
       <main className="container mx-auto px-4 py-8">
-        {/* Quick Actions */}
+        {/* Botões para registrar novas transações */}
         <div className="grid grid-cols-2 gap-4 mb-8">
           <button
             onClick={() => {
@@ -115,7 +132,7 @@ const Dashboard = () => {
           </button>
         </div>
 
-        {/* Balance Summary */}
+        {/* Resumo do saldo atual */}
         <div className="bg-white rounded-lg shadow p-6 mb-8">
           <h2 className="text-xl font-semibold mb-4">Resumo Financeiro</h2>
           <div className="text-3xl font-bold text-primary-500">
@@ -124,7 +141,7 @@ const Dashboard = () => {
           <div className="text-gray-600">Saldo Atual</div>
         </div>
 
-        {/* Features Grid */}
+        {/* Seção de funcionalidades */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
           <div className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow">
             <div className="flex items-center mb-4">
@@ -133,7 +150,6 @@ const Dashboard = () => {
             </div>
             <p className="text-gray-600">Análise detalhada das suas finanças</p>
           </div>
-          
           <div className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow">
             <div className="flex items-center mb-4">
               <FiTarget className="text-primary-500 text-2xl mr-2" />
@@ -141,7 +157,6 @@ const Dashboard = () => {
             </div>
             <p className="text-gray-600">Defina e acompanhe suas metas financeiras</p>
           </div>
-          
           <div className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow">
             <div className="flex items-center mb-4">
               <FiBook className="text-primary-500 text-2xl mr-2" />
@@ -149,7 +164,6 @@ const Dashboard = () => {
             </div>
             <p className="text-gray-600">Conteúdo educacional sobre finanças</p>
           </div>
-          
           <div className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow">
             <div className="flex items-center mb-4">
               <FiCreditCard className="text-primary-500 text-2xl mr-2" />
@@ -159,7 +173,7 @@ const Dashboard = () => {
           </div>
         </div>
 
-        {/* Recent Transactions */}
+        {/* Tabela com transações recentes */}
         <div className="bg-white rounded-lg shadow p-6">
           <h2 className="text-xl font-semibold mb-4">Transações Recentes</h2>
           <div className="overflow-x-auto">
@@ -191,7 +205,7 @@ const Dashboard = () => {
         </div>
       </main>
 
-      {/* Transaction Modal */}
+      {/* Modal para adicionar nova transação */}
       {showTransactionModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4">
           <div className="bg-white rounded-lg p-6 w-full max-w-md">
@@ -200,6 +214,7 @@ const Dashboard = () => {
             </h2>
             <form onSubmit={handleTransactionSubmit}>
               <div className="space-y-4">
+                {/* Campo: Valor */}
                 <div>
                   <label className="block text-sm font-medium text-gray-700">Valor</label>
                   <input
@@ -211,7 +226,8 @@ const Dashboard = () => {
                     onChange={(e) => setFormData({ ...formData, amount: e.target.value })}
                   />
                 </div>
-                
+
+                {/* Campo: Categoria */}
                 <div>
                   <label className="block text-sm font-medium text-gray-700">Categoria</label>
                   <input
@@ -222,7 +238,8 @@ const Dashboard = () => {
                     onChange={(e) => setFormData({ ...formData, category: e.target.value })}
                   />
                 </div>
-                
+
+                {/* Campo: Descrição */}
                 <div>
                   <label className="block text-sm font-medium text-gray-700">Descrição</label>
                   <input
@@ -233,7 +250,8 @@ const Dashboard = () => {
                     onChange={(e) => setFormData({ ...formData, description: e.target.value })}
                   />
                 </div>
-                
+
+                {/* Campo: Data */}
                 <div>
                   <label className="block text-sm font-medium text-gray-700">Data</label>
                   <input
@@ -245,7 +263,8 @@ const Dashboard = () => {
                   />
                 </div>
               </div>
-              
+
+              {/* Botões do modal */}
               <div className="mt-6 flex justify-end space-x-3">
                 <button
                   type="button"

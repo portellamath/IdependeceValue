@@ -1,9 +1,12 @@
-import { FiArrowRight } from 'react-icons/fi'
-import { Link } from 'react-router-dom'
-import SectionHeading from '../components/SectionHeading'
-import PlanCard from '../components/PlanCard'
+// Importações de bibliotecas e componentes externos
+import { FiArrowRight } from 'react-icons/fi' // Ícone de seta
+import { Link } from 'react-router-dom' // Navegação interna
+import SectionHeading from '../components/SectionHeading' // Título e subtítulo de seção
+import PlanCard from '../components/PlanCard' // Card individual de plano
 
+// Componente principal
 const Plans = () => {
+  // Planos fixos oferecidos
   const plans = [
     {
       title: 'Plano Gratuito',
@@ -33,7 +36,7 @@ const Plans = () => {
         'Dicas e orientações fiscais para MEI/autônomos',
         'Acesso a workshops exclusivos'
       ],
-      isPopular: true
+      isPopular: true // Este plano será destacado
     },
     {
       title: 'Plano Premium',
@@ -54,6 +57,7 @@ const Plans = () => {
     }
   ]
 
+  // Soluções personalizadas além dos planos fixos
   const customPlans = [
     {
       title: 'Planejamento Financeiro',
@@ -79,26 +83,19 @@ const Plans = () => {
 
   return (
     <>
-      {/* Header Section */}
+      {/* Seção de Cabeçalho */}
       <section className="bg-primary-500 text-white py-24">
         <div className="container text-center">
-          <h1 
-            className="text-4xl md:text-5xl font-bold mb-6"
-            data-aos="fade-up"
-          >
+          <h1 className="text-4xl md:text-5xl font-bold mb-6" data-aos="fade-up">
             Planos de Gestão Financeira
           </h1>
-          <p 
-            className="text-xl text-gray-200 max-w-3xl mx-auto"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
+          <p className="text-xl text-gray-200 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
             Escolha o plano ideal para organizar suas finanças, aumentar seus lucros e transformar o futuro do seu negócio como MEI ou autônomo.
           </p>
         </div>
       </section>
 
-      {/* Plans Section */}
+      {/* Seção de Planos */}
       <section className="section bg-gray-50">
         <div className="container">
           <SectionHeading 
@@ -122,22 +119,19 @@ const Plans = () => {
             ))}
           </div>
           
-          <div 
-            className="mt-12 text-center"
-            data-aos="fade-up"
-            data-aos-delay="300"
-          >
+          {/* Chamada para ação personalizada */}
+          <div className="mt-12 text-center" data-aos="fade-up" data-aos-delay="300">
             <p className="text-gray-600 mb-6">
-            Não tem certeza de qual plano é o ideal para você? Entre em contato para uma recomendação personalizada.
+              Não tem certeza de qual plano é o ideal para você? Entre em contato para uma recomendação personalizada.
             </p>
-            <Link to="/contact" className="btn btn-primary">
-            Obter Recomendação Personalizada
+            <Link to="/cadastro" className="btn btn-primary">
+              Obter Recomendação Personalizada
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Custom Solutions */}
+      {/* Seção de Soluções Personalizadas */}
       <section className="section">
         <div className="container">
           <SectionHeading 
@@ -156,11 +150,8 @@ const Plans = () => {
               >
                 <h3 className="text-xl font-semibold text-primary-500 mb-3">{plan.title}</h3>
                 <p className="text-gray-600 mb-4">{plan.description}</p>
-                <Link 
-                  to={plan.link} 
-                  className="inline-flex items-center text-secondary-500 hover:text-secondary-600 font-medium"
-                >
-                  Learn More <FiArrowRight className="ml-2" />
+                <Link to="/solucoes" className="inline-flex items-center text-secondary-500 hover:text-secondary-600 font-medium">
+                  Leia Mais <FiArrowRight className="ml-2" />
                 </Link>
               </div>
             ))}
@@ -168,7 +159,7 @@ const Plans = () => {
         </div>
       </section>
 
-      {/* FAQ Section */}
+      {/* Seção de Perguntas Frequentes (FAQ) */}
       <section className="section bg-gray-50">
         <div className="container">
           <SectionHeading 
@@ -178,67 +169,50 @@ const Plans = () => {
           />
           
           <div className="max-w-3xl mx-auto">
-            <div 
-              className="mb-6"
-              data-aos="fade-up"
-            >
+            <div className="mb-6" data-aos="fade-up">
               <h3 className="text-xl font-semibold text-primary-500 mb-3">Como saber qual plano é ideal para mim?</h3>
               <p className="text-gray-600">
-              O plano ideal depende do seu faturamento, dos seus objetivos e da complexidade da sua atividade. O Plano Essencial é ótimo para quem está começando, enquanto o Premium e o Corporativo são mais completos para quem quer crescer ou já tem uma estrutura maior.
+                O plano ideal depende do seu faturamento, dos seus objetivos e da complexidade da sua atividade. O Plano Gratuito é ótimo para quem está começando, enquanto o Premium é mais completo para quem quer crescer com apoio contínuo.
               </p>
             </div>
-            
-            <div 
-              className="mb-6"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
+            <div className="mb-6" data-aos="fade-up" data-aos-delay="100">
               <h3 className="text-xl font-semibold text-primary-500 mb-3">Posso atualizar ou reduzir meu plano depois?</h3>
               <p className="text-gray-600">
-              Sim! Você pode mudar de plano a qualquer momento. Sabemos que o seu negócio evolui, e nossos serviços acompanham essa mudança.
+                Sim! Você pode mudar de plano a qualquer momento. Sabemos que o seu negócio evolui, e nossos serviços acompanham essa mudança.
               </p>
             </div>
-            
-            <div 
-              className="mb-6"
-              data-aos="fade-up"
-              data-aos-delay="200"
-            >
+            <div className="mb-6" data-aos="fade-up" data-aos-delay="200">
               <h3 className="text-xl font-semibold text-primary-500 mb-3">É necessário um compromisso de longo prazo?</h3>
               <p className="text-gray-600">
-              Não. Nossos planos são cobrados mensalmente, e você pode cancelar quando quiser. Mas, claro, resultados financeiros sólidos surgem com acompanhamento contínuo.
+                Não. Nossos planos são cobrados mensalmente, e você pode cancelar quando quiser. Mas, claro, resultados financeiros sólidos surgem com acompanhamento contínuo.
               </p>
             </div>
-            
-            <div 
-              data-aos="fade-up"
-              data-aos-delay="300"
-            >
+            <div data-aos="fade-up" data-aos-delay="300">
               <h3 className="text-xl font-semibold text-primary-500 mb-3">Vocês oferecem planos personalizados?</h3>
               <p className="text-gray-600">
-              Sim! Criamos planos sob medida para a sua realidade como MEI ou autônomo. Fale com nossa equipe e vamos montar a solução ideal para você.
+                Sim! Criamos planos sob medida para a sua realidade como MEI ou autônomo. Fale com nossa equipe e vamos montar a solução ideal para você.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Seção Final - Chamada para ação */}
       <section className="section bg-primary-500 text-white">
         <div className="container text-center">
           <div data-aos="fade-up" className="max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Pronto para Começar?
+              Pronto para Começar?
             </h2>
             <p className="text-lg text-gray-200 mb-8">
-            Dê o primeiro passo para organizar suas finanças e crescer com segurança com a Independent Value.
+              Dê o primeiro passo para organizar suas finanças e crescer com segurança com a Independent Value.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/contact" className="btn bg-secondary-500 hover:bg-secondary-600 text-white">
-              Contate-nos Hoje
+              <Link to="/contato" className="btn bg-secondary-500 hover:bg-secondary-600 text-white">
+                Contate-nos Hoje
               </Link>
-              <Link to="/solutions" className="btn bg-white text-primary-500 hover:bg-gray-100">
-              Explore Nossas Soluções
+              <Link to="/solucoes" className="btn bg-white text-primary-500 hover:bg-gray-100">
+                Explore Nossas Soluções
               </Link>
             </div>
           </div>

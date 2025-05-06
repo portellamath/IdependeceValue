@@ -102,12 +102,12 @@ const Footer = () => {
             <ul className="space-y-3">
               {/* Endereço */}
               <li className="text-gray-400">
-                Rua das Finanças, 200<br />
-                São Paulo, SP 01001-000
+              Av. Tiradentes, 1211 - Parque Industrial<br />
+              Itu - SP, 13309-640
               </li>
               {/* Telefone com link para ligação no celular */}
               <li className="text-gray-400">
-                <a href="tel:+551199999999" className="hover:text-secondary-500 transition-colors">+55 (11) 9999-9999</a>
+                <a href="tel:+551999481590" className="hover:text-secondary-500 transition-colors">+55 (19) 9948-1590</a>
               </li>
               {/* Email com link para abrir no app de email */}
               <li className="text-gray-400">

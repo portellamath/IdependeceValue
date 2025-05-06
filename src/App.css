@@ -1,42 +1,73 @@
+/* 
+  Estiliza o contêiner principal da aplicação. 
+  Define um limite de largura, centraliza na tela e aplica padding interno.
+*/
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  max-width: 1280px;      /* Largura máxima para evitar que o conteúdo fique muito esticado em telas grandes */
+  margin: 0 auto;         /* Centraliza horizontalmente */
+  padding: 2rem;          /* Espaçamento interno para que o conteúdo respire */
+  text-align: center;     /* Alinha todo o texto ao centro (útil para layouts mais simples) */
 }
 
+/* 
+  Estilos aplicados à logo da aplicação.
+  Define tamanho e uma transição suave quando passar o mouse.
+*/
 .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  height: 6em;                            /* Define a altura da logo */
+  padding: 1.5em;                         /* Espaçamento interno ao redor da logo */
+  will-change: filter;                   /* Indica ao navegador que o filtro pode mudar (melhora performance) */
+  transition: filter 300ms;              /* Transição suave de 300ms quando o filtro mudar */
 }
 
+/* 
+  Aplica um efeito de brilho azul quando o usuário passa o mouse sobre qualquer logo.
+*/
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa); /* Sombra azulada com efeito glow */
+}
+
+/* 
+  Se a logo for do React (com classe adicional "react"), usa um tom azul próprio do React.
+*/
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa); /* Tom azul mais claro, específico do React */
+}
+
+/* 
+  Animação de rotação contínua da logo (utilizada se o usuário permitir movimentos).
+*/
 @keyframes logo-spin {
   from {
-    transform: rotate(0deg);
+    transform: rotate(0deg);     /* Começa sem rotação */
   }
   to {
-    transform: rotate(360deg);
+    transform: rotate(360deg);   /* Termina com rotação completa de 360 graus */
   }
 }
 
+/* 
+  Verifica se o usuário NÃO prefere menos movimento (acessibilidade).
+  Se puder usar animações, gira a segunda logo da página continuamente.
+*/
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+    animation: logo-spin infinite 20s linear; /* Gira continuamente a cada 20s */
   }
 }
 
+/* 
+  Estilo aplicado a cartões de conteúdo.
+  Apenas adiciona um espaçamento interno.
+*/
 .card {
   padding: 2em;
 }
 
+/* 
+  Estilo aplicado a textos com instruções ou links de documentação.
+  Um tom cinza claro que indica que é algo secundário, mas ainda visível.
+*/
 .read-the-docs {
   color: #888;
 }

@@ -49,12 +49,12 @@ const HeroSection = () => {
             data-aos-delay="200"
           >
             {/* Botão primário */}
-            <Link to="/contact" className="btn btn-primary">
+            <Link to="/cadastro" className="btn btn-primary">
               Comece Hoje
             </Link>
 
             {/* Botão secundário */}
-            <Link to="/plans" className="btn bg-white text-primary-500 hover:bg-gray-100">
+            <Link to="/planos" className="btn bg-white text-primary-500 hover:bg-gray-100">
               Conheça Nossos Planos
             </Link>
           </div>

@@ -1,18 +1,36 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="pt-BR"> <!-- Define o tipo de documento e o idioma principal da página como português do Brasil -->
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8" /> <!-- Define a codificação de caracteres como UTF-8 para suportar acentuação -->
+    
+    <!-- Ícone que aparece na aba do navegador -->
     <link rel="icon" type="image/svg+xml" href="/2.png" />
+    
+    <!-- Faz a página se ajustar corretamente em dispositivos móveis (responsividade) -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Título da página (aparece na aba do navegador) -->
     <title>IV Value - Soluções de Gestão Financeira</title>
+    
+    <!-- Descrição da página para motores de busca (SEO) -->
     <meta name="description" content="IV Value oferece soluções profissionais de gestão financeira para ajudar a transformar seu futuro financeiro." />
+    
+    <!-- Melhora o desempenho ao carregar fontes do Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Importa duas famílias de fontes: Open Sans (para texto) e Poppins (para títulos) -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    
+    <!-- Importa o CSS da biblioteca de mapas Leaflet, usado em mapas interativos -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
   </head>
   <body>
+    <!-- Ponto de entrada do React. O conteúdo da aplicação será injetado aqui -->
     <div id="root"></div>
+    
+    <!-- Script principal da aplicação, escrito em JSX/React com suporte a módulos ES -->
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

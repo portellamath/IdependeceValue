@@ -1,61 +1,80 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Importação dos módulos principais do TailwindCSS */
+@tailwind base;       /* Reseta estilos padrão (Normalize) e aplica estilos básicos */
+@tailwind components; /* Permite usar componentes utilitários personalizados */
+@tailwind utilities;  /* Importa todas as utilidades padrão do Tailwind */
 
+/* Estilizações globais da raiz do documento */
 :root {
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  scroll-behavior: smooth;
+  font-synthesis: none;                        /* Evita a substituição automática de fontes */
+  text-rendering: optimizeLegibility;          /* Melhora a legibilidade do texto em navegadores */
+  -webkit-font-smoothing: antialiased;         /* Suaviza as fontes em navegadores baseados em WebKit */
+  -moz-osx-font-smoothing: grayscale;          /* Suaviza as fontes no macOS */
+  scroll-behavior: smooth;                     /* Deixa a rolagem suave ao navegar por âncoras */
 }
 
+/* Estilização base para o <body> do site */
 body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Open Sans', sans-serif;
-  @apply bg-gray-50;
+  margin: 0;                                   /* Remove margem padrão do navegador */
+  padding: 0;                                  /* Remove padding padrão */
+  font-family: 'Open Sans', sans-serif;        /* Define a fonte principal do texto geral */
+  @apply bg-gray-50;                           /* Aplica um fundo cinza claro usando Tailwind */
 }
 
+/* Estilo para todos os títulos (h1 a h6) */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif;          /* Define uma fonte moderna para títulos */
   @apply font-heading font-semibold leading-tight;
+  /* Usa estilos semibold (meio negrito), espaçamento compacto entre linhas e fonte definida via Tailwind */
 }
 
+/* Estilo para todos os parágrafos */
 p {
-  @apply font-body leading-relaxed;
+  @apply font-body leading-relaxed;            /* Usa fonte padrão para corpo e espaçamento confortável entre linhas */
 }
 
+/* Classe utilitária para limitar e centralizar o conteúdo */
 .container {
-  @apply px-4 mx-auto max-w-7xl;
+  @apply px-4 mx-auto max-w-7xl;               /* Espaçamento horizontal, centraliza e limita a largura máxima */
 }
 
+/* Estilo base para botões reutilizáveis */
 .btn {
   @apply inline-flex items-center justify-center px-6 py-3 font-medium transition duration-300 rounded-md focus:outline-none;
+  /* Botões com padding, fonte média, bordas arredondadas, animações suaves e sem borda ao focar */
 }
 
+/* Variante de botão com cor primária */
 .btn-primary {
   @apply text-white bg-secondary-500 hover:bg-secondary-600 focus:ring-2 focus:ring-secondary-300;
+  /* Fundo colorido, texto branco, hover com tom mais escuro e anel de foco ao clicar com teclado */
 }
 
+/* Variante de botão com borda (estilo "outline") */
 .btn-outline {
   @apply text-primary-500 bg-transparent border border-primary-500 hover:bg-primary-500 hover:text-white focus:ring-2 focus:ring-primary-300;
+  /* Começa transparente, com borda, e ao passar o mouse muda para fundo colorido e texto branco */
 }
 
+/* Estilo base para links do menu de navegação */
 .nav-link {
-  @apply relative font-medium text-gray-700 transition-colors hover:text-primary-500 before:absolute before:bottom-0 before:left-0 before:w-0 before:h-0.5 before:bg-secondary-500 before:transition-all before:duration-300 hover:before:w-full;
+  @apply relative font-medium text-gray-700 transition-colors hover:text-primary-500;
+  @apply before:absolute before:bottom-0 before:left-0 before:w-0 before:h-0.5 before:bg-secondary-500 before:transition-all before:duration-300 hover:before:w-full;
+  /* Cria uma linha animada por baixo do link ao passar o mouse, melhorando a interação visual */
 }
 
+/* Estilo quando o link do menu está ativo */
 .nav-link.active {
-  @apply text-primary-500 before:w-full;
+  @apply text-primary-500 before:w-full;       /* Altera cor do texto e expande a linha inferior */
 }
 
+/* Classe padrão para seções (ex: blocos de conteúdo ou sessões do site) */
 .section {
-  @apply py-16 md:py-24;
+  @apply py-16 md:py-24;                       /* Padding vertical grande em dispositivos pequenos e ainda maior em médios+ */
 }
 
+/* Estilização específica para o mapa Leaflet (ex: localização, contato) */
 .leaflet-container {
-  width: 100%;
-  height: 400px;
-  z-index: 10;
+  width: 100%;                                 /* Ocupa toda a largura do contêiner pai */
+  height: 400px;                               /* Altura fixa para exibição consistente */
+  z-index: 10;                                 /* Garante que o mapa fique acima de outros elementos se necessário */
 }
