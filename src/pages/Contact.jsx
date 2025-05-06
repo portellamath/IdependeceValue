@@ -156,7 +156,7 @@ const Contact = () => {
             <p className="text-lg text-gray-200 mb-8">
               Dê o primeiro passo rumo ao sucesso financeiro entrando em contato com nossa equipe hoje mesmo.
             </p>
-            <a href="tel:+12125557890" className="btn bg-secondary-500 hover:bg-secondary-600 text-white">
+            <a href="tel:+551999481590" className="btn bg-secondary-500 hover:bg-secondary-600 text-white">
               Ligue Agora
             </a>
           </div>

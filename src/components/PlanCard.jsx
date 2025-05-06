@@ -38,7 +38,7 @@ const PlanCard = ({
 
         {/* Preço com destaque */}
         <div className="flex items-end">
-          <span className="text-4xl font-bold text-primary-500">${price}</span>
+          <span className="text-4xl font-bold text-primary-500">R${price}</span>
           {period && (
             <span className="text-gray-500 ml-1">/{period}</span>
           )}

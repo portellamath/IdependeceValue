@@ -4,7 +4,7 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 // Componente que renderiza um mapa interativo
 const MapComponent = () => {
   // Definimos a posição central do mapa (coordenadas de Nova York)
-  const position = [40.7128, -74.0060]
+  const position = [-23.2903129, -47.2988404]
   
   return (
     // Wrapper com animação (usando AOS) e estilo visual com bordas arredondadas e sombra
@@ -27,8 +27,8 @@ const MapComponent = () => {
         <Marker position={position}>
           {/* Popup que aparece quando clicamos no marcador */}
           <Popup>
-            IV Value Financial Management<br />
-            123 Finance Street, New York
+            Independent value<br />
+            Av. Tiradentes, 1211 - Itu Sp
           </Popup>
         </Marker>
 
